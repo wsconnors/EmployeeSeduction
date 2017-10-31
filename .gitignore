@@ -6,7 +6,7 @@
 .idea/**/tasks.xml
 .idea/dictionaries
 out/
-
+EmployeeSeduction.iml
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
