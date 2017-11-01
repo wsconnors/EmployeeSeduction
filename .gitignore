@@ -7,7 +7,9 @@
 .idea/dictionaries
 out/
 EmployeeSeduction.iml
-target/
+.DS_Store
+.idea/*
+target/*
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
