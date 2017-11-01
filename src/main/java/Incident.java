@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class Incident {
 
-    private ArrayList<Employee> employeesInvolved = new ArrayList <>();
-    private String description;
-    private String date;
-    private int id = 0;
+    private static ArrayList<Employee> employeesInvolved = new ArrayList <>();
+    private static String description;
+    private static String date;
+    private static int id = 0;
 
     static int instanceCounter = 0;
 
@@ -16,6 +16,11 @@ public class Incident {
 
         instanceCounter++;
         id = instanceCounter;
+    }
+
+    public void addEmployee(Employee employee){
+        employeesInvolved.add(employee);
+
     }
 
     public ArrayList <Employee> getEmployeesInvolved() {
@@ -44,7 +49,7 @@ public class Incident {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     private void setId(int id) {

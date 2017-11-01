@@ -11,6 +11,8 @@ public class IncidentTest {
     Employee testEmployeeTwo = new Employee();
 
     ArrayList <Employee> testArrayList = new ArrayList <>();
+    ArrayList <Employee> testArrayListTwo = new ArrayList <>();
+
 
 
     Incident testIncident = new Incident(testArrayList, "fight", "11/01/2017");
@@ -30,6 +32,16 @@ public class IncidentTest {
 
     @Test
     public void setEmployeesInvolved() {
+
+
+        testIncident.setEmployeesInvolved(testArrayListTwo);
+
+        ArrayList<Employee> expected = null;
+        ArrayList<Employee> actual = testIncident.getEmployeesInvolved();
+
+        Assert.assertEquals(expected,actual);
+
+
 
     }
 
