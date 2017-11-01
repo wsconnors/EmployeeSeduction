@@ -10,13 +10,15 @@ public class BenefitGold extends BenefitPackage{
         healthInsurance = true;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public BenefitGold(){
 
         super();
     }
+
+    public String getName() {
+        return name;
+    }
+
+
 
 }
