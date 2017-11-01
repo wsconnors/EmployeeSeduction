@@ -5,6 +5,18 @@ public class PersonTest {
 
     Person newPerson = new Person(123,"wes","connors");
 
+    @Test
+    public void IdTest(){
+        int expected = 100;
+        newPerson.setId(expected);
+
+        int actual = newPerson.getId();
+
+        Assert.assertEquals(expected,actual);
+
+
+    }
+
 
     @Test       // Set and get test
     public void FirstNameTest(){
