@@ -20,5 +20,4 @@ public class BenefitGold extends BenefitPackage{
     }
 
 
-
 }
