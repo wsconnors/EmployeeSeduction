@@ -5,12 +5,25 @@ public abstract class Menu {
         this.menuEnum = menuEnums;
     }
 
-    public abstract void userSelection(String input);
+    public abstract void userMenuSelection(String input);
+
+
+    public void display() {
+        String userInput;
+
+        do {
+            userInput = this.getInput().toUpperCase();
+            userMenuSelection(userInput);
+        }while (!"quit".equalsIgnoreCase(userInput));
+    }
+
+
 
     public String getInput() {
         for (Enum e: menuEnum) {
-            Console.print(e.toString());
+            Console.print(e.name());
         }
-        return Console.getString("Please select a menu: ");
+        return Console.getString("");
     }
 }
+
