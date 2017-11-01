@@ -5,11 +5,25 @@ public class Person {
     private String phoneNumber;
     private String address;
 
-    public Person(int id,String firstName,String lastName){
+    public Person(int id, String firstName, String lastName){
+        this(id,firstName,lastName,"Not given.", "Not given.");
+
+    }
+
+    public Person(int id, String firstName, String lastName, String phoneNumber){
+        this(id,firstName,lastName,phoneNumber, "Not given.");
+
+    }
+
+    public Person(int id,String firstName,String lastName, String phoneNumber, String address){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
+
+
 
     public int getId() {
         return id;
