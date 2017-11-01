@@ -4,7 +4,7 @@ public class BenefitPlat extends BenefitPackage {
 
     private String name = "Platinum Package";
 
-    {   //higher package gets 25 days/5 weeks
+    {   //higher package gets 25 days
         paidTimeOffInDays = 25;
 
         healthInsurance = true;
