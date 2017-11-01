@@ -10,6 +10,7 @@ EmployeeSeduction.iml
 .DS_Store
 .idea/*
 target/*
+production/*
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
