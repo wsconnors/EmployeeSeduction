@@ -1,16 +1,18 @@
 import java.util.ArrayList;
+import java.util.Date;
 
-public class Employee extends Person{
+
+public class Employee extends Person {
     private String position;
     private Enum department;
     private double Salary;
     private boolean isSalary;
     private ArrayList<TimeCard> timeCardList = new ArrayList<TimeCard>();
-//    private ArrayList<Incident> incidents;
+    //    private ArrayList<Incident> incidents;
     private BenefitPackage benefitPackage;
 
-    Employee(int id, String firstName,String lastName){
-        super(id,firstName,lastName);
+    Employee(int id, String firstName, String lastName) {
+        super(id, firstName, lastName);
     }
 
 
@@ -54,6 +56,14 @@ public class Employee extends Person{
         timeCardList.add(timeCard);
     }
 
+    public BenefitPackage getBenefitPackage() {
+        return benefitPackage;
+    }
+
+    public void setBenefitPackage(BenefitPackage benefitPackage) {
+        this.benefitPackage = benefitPackage;
+    }
+
 //    public ArrayList<Incident> getIncidents() {
 //        return incidents;
 //    }
@@ -61,12 +71,24 @@ public class Employee extends Person{
 //    public void addIncident(Incident incident) {
 //        this.incidents.add(incident);
 //    }
-
-    public BenefitPackage getBenefitPackage() {
-        return benefitPackage;
+    public void clockIn(){
+        Date now = new Date();
+        TimeCard timeCard = new TimeCard(now);
+        addTimeCard(timeCard);
     }
 
-    public void setBenefitPackage(BenefitPackage benefitPackage) {
-        this.benefitPackage = benefitPackage;
+    public void clockOut(){
+        if (timeCardList.size()>0) {
+            int last = timeCardList.size() - 1;
+            TimeCard lastCard = timeCardList.get(last);
+            if (lastCard.getClockOut() == null) {
+                Date now = new Date();
+                lastCard.setClockOut(now);
+            }
+        }
+    }
+
+    public double getHourlyWage(){
+        return this.Salary/40;
     }
 }
