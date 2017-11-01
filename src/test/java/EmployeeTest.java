@@ -1,7 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class EmployeeTest {
@@ -100,4 +99,33 @@ public class EmployeeTest {
 
     }
 
+    @Test
+    public void clockInTest(){
+        Date expected = new Date();
+        employee1.clockIn();
+
+        Date actual = employee1.getTimeCardList().get(0).getClockIn();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void clockOutTest(){
+        employee1.clockIn();
+        employee1.clockOut();
+
+        Date expected = new Date();
+        Date actual = employee1.getTimeCardList().get(0).getClockOut();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void getHourlyWageTest(){
+        double expected = 10;
+        employee1.setSalary(400);
+        double actual = employee1.getHourlyWage();
+
+        Assert.assertEquals(expected,actual,0);
+    }
 }
