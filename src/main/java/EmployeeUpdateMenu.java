@@ -69,7 +69,7 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     private void updatePhoneNumber(){
-        this.selectedEmployee.setPhoneNumber(Console.getString("Enter new first name: "));
+        this.selectedEmployee.setPhoneNumber(Console.getString("Enter new phone number: "));
     }
 
     private void updateSalary(){

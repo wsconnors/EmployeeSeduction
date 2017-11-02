@@ -1,9 +1,9 @@
-import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 
 public class IncidentsMenu extends Menu{
+    public static final IncidentsMenu INSTANCE = new IncidentsMenu();
 
-    enum employeeUpdateEnums {CREATE, FIND, BACK};
+    public enum employeeUpdateEnums {CREATE, FIND, BACK, QUIT};
 
     public IncidentsMenu() {
         super(employeeUpdateEnums.values());
@@ -19,8 +19,12 @@ public class IncidentsMenu extends Menu{
             case FIND:
                 findIncident();
                 break;
-//            case BACK:
-//                mainMenu();
+            case BACK:
+                Console.goBack(MainMenu.INSTANCE);
+                break;
+            case QUIT:
+                Console.quitHRApp();
+                break;
         }
     }
 
@@ -32,31 +36,23 @@ public class IncidentsMenu extends Menu{
             int idInvolved = Console.getInt("Enter ID of employee involved: ");
             Employee employeeInvolved = EmployeeWareHouse.getEmployeeById(idInvolved);
             employeesInvolved.add(employeeInvolved);
-            menuChoice = Console.getString("Would you like to add another employee? ");
+            menuChoice = Console.getString("Would you like to add another employee?: 'Yes' or 'No'");
         }
 
         String description = Console.getString("Please enter a description: ");
         String date = Console.getString("Please enter a date: ");
 
-
         Incident newIncident = new Incident(employeesInvolved, description, date);
         IncidentWareHouse.addIncident(newIncident);
-
+        IncidentsMenu.INSTANCE.display();
     }
 
     private void findIncident(){
         int ID = Console.getInt("Enter incident ID number: ");
-        IncidentWareHouse.getIncidentById(ID).toString();
+        Incident aIncident = IncidentWareHouse.getIncidentById(ID);
 
-
+        IncidentActionMenu.INSTANCE.setIncident(aIncident);
+        IncidentActionMenu.INSTANCE.display();
     }
-
-
-
-
-//    private void mainMenu(){
-//        MainMenu mainMenu = new MainMenu();
-//    }
-
-
 }
+

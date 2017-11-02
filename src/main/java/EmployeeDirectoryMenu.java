@@ -40,8 +40,6 @@ public class EmployeeDirectoryMenu extends Menu{
         Employee aNewEmployee = new Employee(newEmployeeId, newEmployeeFirstName,
                 newEmployeeLastName, newEmployeePhoneNumber, newEmployeeAddress);
 
-        System.out.println(aNewEmployee.toString());
-
         EmployeeWareHouse.addEmployee(aNewEmployee);
 
     }
