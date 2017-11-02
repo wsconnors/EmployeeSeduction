@@ -1,11 +1,12 @@
-public class EmployeeDirectoryMenu extends Menu{
+public class EmployeeDirectoryMenu extends Menu {
     public static final EmployeeDirectoryMenu INSTANCE = new EmployeeDirectoryMenu();
 
     enum employeeDirectoryMenu {
         CREATE_EMPLOYEE,
         FIND_EMPLOYEE,
         BACK,
-        QUIT}
+        QUIT
+    }
 
     public EmployeeDirectoryMenu() {
         super(employeeDirectoryMenu.values());
@@ -40,6 +41,7 @@ public class EmployeeDirectoryMenu extends Menu{
         Employee aNewEmployee = new Employee(newEmployeeId, newEmployeeFirstName,
                 newEmployeeLastName, newEmployeePhoneNumber, newEmployeeAddress);
 
+        Console.print(aNewEmployee.toString());
         EmployeeWareHouse.addEmployee(aNewEmployee);
 
     }
@@ -47,5 +49,6 @@ public class EmployeeDirectoryMenu extends Menu{
     private void employeeSelection() {
         EmployeeSelectionMenu.INSTANCE.display();
     }
+
 }
 
