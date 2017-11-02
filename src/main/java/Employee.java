@@ -11,16 +11,16 @@ public class Employee extends Person {
     //    private ArrayList<Incident> incidents;
     private BenefitPackage benefitPackage;
 
-    Employee(int id, String firstName, String lastName) {
-        super(id, firstName, lastName);
+    Employee(String firstName, String lastName) {
+        super(firstName, lastName);
     }
 
-    Employee(int id, String firstName, String lastName, String phoneNumber) {
-        super(id, firstName, lastName, phoneNumber);
+    Employee(String firstName, String lastName, String phoneNumber) {
+        super(firstName, lastName, phoneNumber);
     }
 
-    Employee(int id, String firstName, String lastName, String phoneNumber, String address) {
-        super(id, firstName, lastName, phoneNumber, address);
+    Employee(String firstName, String lastName, String phoneNumber, String address) {
+        super(firstName, lastName, phoneNumber, address);
     }
 
 

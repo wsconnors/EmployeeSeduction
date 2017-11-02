@@ -14,7 +14,7 @@ public class EmployeeSelectionMenuTest {
 
     @Test
     public void checkEmployeeExistence_NotNull_ById() throws Exception {
-        Employee expected = new Employee(1, "Andrew", "Kutchen");
+        Employee expected = new Employee("Andrew", "Kutchen");
         EmployeeWareHouse.addEmployee(expected);
 
         Employee actual = EmployeeSelectionMenu.INSTANCE.checkEmployeeExistence(expected, "Id number");
@@ -23,7 +23,7 @@ public class EmployeeSelectionMenuTest {
 
     @Test
     public void checkEmployeeExistence_NotNull_ByLastName() throws Exception {
-        Employee expected = new Employee(1, "Andrew", "Kutchen");
+        Employee expected = new Employee("Andrew", "Kutchen");
         EmployeeWareHouse.addEmployee(expected);
 
         Employee actual = EmployeeSelectionMenu.INSTANCE.checkEmployeeExistence(expected, "last name");
