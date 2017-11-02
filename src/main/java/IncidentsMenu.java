@@ -32,9 +32,12 @@ public class IncidentsMenu extends Menu{
         String menuChoice = Console.getString("Would you like to add an employee?: 'Yes' or 'No'");
         ArrayList<Employee> employeesInvolved = new ArrayList <>();
 
-        while(!"No".equalsIgnoreCase(menuChoice)){
+        while("yes".equalsIgnoreCase(menuChoice)){
             int idInvolved = Console.getInt("Enter ID of employee involved: ");
             Employee employeeInvolved = EmployeeWareHouse.getEmployeeById(idInvolved);
+            if(employeeInvolved == null){
+                System.out.println("Employee does not exist");
+            }
             employeesInvolved.add(employeeInvolved);
             menuChoice = Console.getString("Would you like to add another employee?: 'Yes' or 'No'");
         }
@@ -44,13 +47,17 @@ public class IncidentsMenu extends Menu{
 
         Incident newIncident = new Incident(employeesInvolved, description, date);
         IncidentWareHouse.addIncident(newIncident);
+        System.out.println("New incident ID: " + newIncident.getId());
         IncidentsMenu.INSTANCE.display();
     }
 
     private void findIncident(){
         int ID = Console.getInt("Enter incident ID number: ");
         Incident aIncident = IncidentWareHouse.getIncidentById(ID);
-
+        if(aIncident == null){
+            Console.print("Incident does not exist.\n");
+            IncidentsMenu.INSTANCE.display();
+        }
         IncidentActionMenu.INSTANCE.setIncident(aIncident);
         IncidentActionMenu.INSTANCE.display();
     }
