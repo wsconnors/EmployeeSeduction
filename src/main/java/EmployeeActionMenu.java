@@ -10,7 +10,7 @@ public class EmployeeActionMenu extends Menu {
         this.selectedEmployee = selectedEmployee;
     }
 
-    public enum employeeActionEnums {UPDATE, DELETE, BACK};
+    public enum employeeActionEnums {UPDATE, PRINT_INFO, DELETE, BACK};
 
 
 
@@ -22,6 +22,10 @@ public class EmployeeActionMenu extends Menu {
     public void userMenuSelection(String input) {
 
         switch (employeeActionEnums.valueOf(input)){
+            case PRINT_INFO:
+                Console.print(this.selectedEmployee.toString());
+                EmployeeActionMenu.INSTANCE.display();
+                break;
             case UPDATE:
                 update();
                 break;
@@ -44,6 +48,6 @@ public class EmployeeActionMenu extends Menu {
         EmployeeWareHouse.removeEmployee(this.selectedEmployee);
         Console.print("\n"+this.selectedEmployee.toString());
         Console.print("Employee has been deleted.\n( ° ͜ʖ͡°)╭∩╮\n");
-        EmployeeActionMenu.INSTANCE.display();
+        EmployeeDirectoryMenu.INSTANCE.display();
     }
 }

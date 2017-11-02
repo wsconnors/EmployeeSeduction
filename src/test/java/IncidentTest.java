@@ -7,8 +7,8 @@ import static org.junit.Assert.*;
 
 public class IncidentTest {
 
-    Employee testEmployeeOne = new Employee("John", "Jones");
-    Employee testEmployeeTwo = new Employee("Ricky", "Smith");
+    Employee testEmployeeOne = new Employee("John", "Jones", "123", "Home");
+    Employee testEmployeeTwo = new Employee("Ricky", "Smith", "123", "Home");
 
     ArrayList <Employee> testArrayList = new ArrayList <>();
     ArrayList <Employee> testArrayListTwo = new ArrayList <>();

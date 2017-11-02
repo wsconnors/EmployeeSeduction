@@ -4,7 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class EmployeeWareHouseTest {
-    Employee employee = new Employee("billy","bob");
+    Employee employee = new Employee("billy","bob", "123", "Home");
 
     @Test       // test getEmployeeList
     public void addEmployeeTest(){

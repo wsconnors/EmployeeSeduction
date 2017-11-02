@@ -5,21 +5,25 @@ public class Person {
     private String phoneNumber;
     private String address;
 
-    public Person(String firstName, String lastName){
-        this(firstName,lastName,"Not given.", "Not given.");
-
-    }
-
-    public Person(String firstName, String lastName, String phoneNumber){
-        this(firstName,lastName,phoneNumber, "Not given.");
-
-    }
-
     public Person(String firstName,String lastName, String phoneNumber, String address){
+        if (!newEmployeeIdCheck(id)) {
+            this.id =  Integer.parseInt(String.format("%04d",(int)Math.floor(Math.random()*1000)));
+        }
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.address = address;
+    }
+
+    public boolean newEmployeeIdCheck(int id) {
+        boolean isIdOriginal = true;
+        for (Employee curemployee : EmployeeWareHouse.getEmployeeList()) {
+            if (id == curemployee.getId()) {
+                isIdOriginal = false;
+            }
+        }
+        return isIdOriginal;
     }
 
 
