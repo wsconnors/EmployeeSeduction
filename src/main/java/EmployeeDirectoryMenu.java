@@ -49,5 +49,14 @@ public class EmployeeDirectoryMenu extends Menu {
         EmployeeSelectionMenu.INSTANCE.display();
     }
 
+    private boolean newEmployeeIdCheck(int id) {
+        for (Employee curemployee : EmployeeWareHouse.getEmployeeList()) {
+            if (id == curemployee.getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
 
