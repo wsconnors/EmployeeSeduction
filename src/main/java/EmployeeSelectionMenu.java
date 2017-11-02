@@ -55,12 +55,12 @@ public class EmployeeSelectionMenu extends Menu{
     public Employee checkEmployeeExistence(Employee aEmployee, String checkType) {
         while (aEmployee == null) {
             if ("Id number".equalsIgnoreCase(checkType)) {
-                askForEmployeeId();
+                aEmployee = askForEmployeeId();
+
             } else if ("last name".equalsIgnoreCase(checkType)) {
-                askForEmployeeLastName();
+                aEmployee = askForEmployeeLastName();
             }
         }
-
         return aEmployee;
     }
 }
