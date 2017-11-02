@@ -55,4 +55,15 @@ public class Incident {
     private void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString(){
+        String output = "Incident Number: " + id;
+        output += "\nEmployees involved :";
+        for(Employee employee : employeesInvolved){
+            output += "\n\tName: "+employee.getFirstName()+" "+employee.getLastName()+" ID: "+employee.getId();
+        }
+        output += "\nDescription: " + description+ "\nDate: " + date;
+        return output;
+    }
 }
