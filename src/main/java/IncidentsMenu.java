@@ -42,7 +42,7 @@ public class IncidentsMenu extends Menu{
             employeesInvolved.add(employeeInvolved);
             menuChoice = Console.getString("Would you like to add another employee?: 'Yes' or 'No'");
         }
-        
+
         String description = Console.getString("Please enter a description: ");
         String date = Console.getString("Please enter a date: ");
 

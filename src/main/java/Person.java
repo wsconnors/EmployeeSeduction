@@ -1,5 +1,5 @@
 public class Person {
-    private int id = (int)Math.floor(Math.random()*1000);
+    private int id =  Integer.parseInt(String.format("%04d",(int)Math.floor(Math.random()*1000)));
     private String firstName;
     private String lastName;
     private String phoneNumber;
