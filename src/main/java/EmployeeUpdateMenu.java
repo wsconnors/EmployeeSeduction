@@ -128,9 +128,4 @@ public class EmployeeUpdateMenu extends Menu {
     private void updatePosition(){
         this.selectedEmployee.setPosition(Console.getString("Enter a new position: "));
     }
-
-//    private void mainMenu(){
-//        MainMenu mainMenu = new MainMenu();
-//        MainMenu.display();
-//    }
 }
