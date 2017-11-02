@@ -11,14 +11,6 @@ public class Employee extends Person {
     //    private ArrayList<Incident> incidents;
     private BenefitPackage benefitPackage;
 
-    Employee(String firstName, String lastName) {
-        super(firstName, lastName);
-    }
-
-    Employee(String firstName, String lastName, String phoneNumber) {
-        super(firstName, lastName, phoneNumber);
-    }
-
     Employee(String firstName, String lastName, String phoneNumber, String address) {
         super(firstName, lastName, phoneNumber, address);
     }
@@ -102,7 +94,8 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        String output = "Employee ID: " + super.getId() +
+        String output =
+                "\nEmployee ID: " + super.getId() +
                 "\nName: " + super.getFirstName() + " " + super.getLastName() +
                 "\nPhone Number: " + super.getPhoneNumber() +
                 "\nAddress: " + super.getAddress() +

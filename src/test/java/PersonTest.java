@@ -3,7 +3,7 @@ import org.junit.Test;
 
 public class PersonTest {
 
-    Person newPerson = new Person("wes","connors");
+    Person newPerson = new Person("wes","connors", "123", "Home");
 
     @Test
     public void IdTest(){

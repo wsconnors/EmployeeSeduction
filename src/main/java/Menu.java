@@ -17,8 +17,6 @@ public abstract class Menu {
         }while (!"quit".equalsIgnoreCase(userInput));
     }
 
-
-
     public String getInput() {
         for (Enum e: menuEnum) {
             Console.print(e.name());

@@ -47,7 +47,7 @@ public class EmployeeSelectionMenu extends Menu{
     }
 
     public Employee askForEmployeeLastName() {
-        String employee = Console.getString("Please enter employee's  last name.");
+        String employee = Console.getString("Please enter employee's last name.");
         Employee aEmployee = EmployeeWareHouse.getEmployeeByLastName(employee);
         return aEmployee;
     }
@@ -55,9 +55,11 @@ public class EmployeeSelectionMenu extends Menu{
     public Employee checkEmployeeExistence(Employee aEmployee, String checkType) {
         while (aEmployee == null) {
             if ("Id number".equalsIgnoreCase(checkType)) {
+                Console.print("That employee Id does not exist.\n");
                 aEmployee = askForEmployeeId();
 
             } else if ("last name".equalsIgnoreCase(checkType)) {
+                Console.print("That employee last name does not exist.\n");
                 aEmployee = askForEmployeeLastName();
             }
         }
