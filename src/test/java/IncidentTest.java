@@ -93,5 +93,21 @@ public class IncidentTest {
 
     }
 
+    @Test
+    public void toStringTest(){
+        String expected = "Incident Number: 2\n" +
+                "Employees involved :\n" +
+                "\tName: John Jones ID: 1\n" +
+                "\tName: Ricky Smith ID: 2\n" +
+                "Description: asdf\n" +
+                "Date: asdfasdf";
+        testArrayList.add(testEmployeeOne);
+        testArrayList.add(testEmployeeTwo);
+
+        String actual = testIncident.toString();
+
+        Assert.assertEquals(expected,actual);
+    }
+
 
 }
