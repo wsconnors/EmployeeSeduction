@@ -12,7 +12,6 @@ public class MainMenu extends Menu{
 
     @Override
     public void userMenuSelection(String input) {
-        System.out.println("Main Menu: \n");
         switch (mainMenuEnum.valueOf(input)){
             case EMPLOYEE_DIRECTORY:
                 employeeDirectory();
