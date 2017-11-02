@@ -11,7 +11,7 @@ public class IncidentActionMenu extends Menu{
         this.incident = incident;
     }
 
-    public enum incidentUpdateEnums {UPDATE, DELETE, PRINT_INFO, BACK, QUIT};
+    public enum incidentUpdateEnums {PRINT_INFO, UPDATE, DELETE, BACK, QUIT};
 
     public IncidentActionMenu() {
         super(IncidentActionMenu.incidentUpdateEnums.values());
@@ -21,11 +21,11 @@ public class IncidentActionMenu extends Menu{
     public void userMenuSelection(String input) {
 
         switch (IncidentActionMenu.incidentUpdateEnums.valueOf(input)){
-            case UPDATE:
-                updateIncident();
-                break;
             case PRINT_INFO:
                 printIncident();
+                break;
+            case UPDATE:
+                updateIncident();
                 break;
             case BACK:
                 Console.goBack(IncidentsMenu.INSTANCE);
@@ -42,7 +42,7 @@ public class IncidentActionMenu extends Menu{
         IncidentUpdateMenu.INSTANCE.setIncident(this.incident);
     }
     public void printIncident() {
-
+        this.incident.toString();
     }
 }
 
