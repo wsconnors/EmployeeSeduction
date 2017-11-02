@@ -36,12 +36,13 @@ public class IncidentsMenu extends Menu{
             int idInvolved = Console.getInt("Enter ID of employee involved: ");
             Employee employeeInvolved = EmployeeWareHouse.getEmployeeById(idInvolved);
             if(employeeInvolved == null){
-                System.out.println("Employee does not exist");
+                System.out.println("Employee does not exist.");
+                continue;
             }
             employeesInvolved.add(employeeInvolved);
             menuChoice = Console.getString("Would you like to add another employee?: 'Yes' or 'No'");
         }
-
+        
         String description = Console.getString("Please enter a description: ");
         String date = Console.getString("Please enter a date: ");
 
