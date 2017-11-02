@@ -11,6 +11,8 @@ public abstract class Menu {
     public void display() {
         String userInput;
 
+
+
         do {
             userInput = this.getInput().toUpperCase();
             userMenuSelection(userInput);

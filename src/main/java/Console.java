@@ -1,21 +1,22 @@
 import java.util.Scanner;
 
 public class Console {
-    private static Scanner sc = new Scanner(System.in);
-
 //    public scannerInput(String input) {}
 
     public static String getString(String prompt) {
+        Scanner sc = new Scanner(System.in);
         System.out.println(prompt);
-        return sc.next();
+        return sc.nextLine();
     }
 
     public static double getDouble(String prompt) {
+        Scanner sc = new Scanner(System.in);
         System.out.println(prompt);
         return sc.nextDouble();
     }
 
     public static int getInt(String prompt) {
+        Scanner sc = new Scanner(System.in);
         System.out.println(prompt);
         return sc.nextInt();
     }

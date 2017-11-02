@@ -25,7 +25,7 @@ public class IncidentsMenu extends Menu{
     }
 
     private void createIncident() {
-        String menuChoice = Console.getString("Would you like to add an employee? ");
+        String menuChoice = Console.getString("Would you like to add an employee?: 'Yes' or 'No'");
         ArrayList<Employee> employeesInvolved = new ArrayList <>();
 
         while(!"No".equalsIgnoreCase(menuChoice)){

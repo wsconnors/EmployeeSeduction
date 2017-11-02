@@ -49,9 +49,9 @@ public class EmployeeUpdateMenu extends Menu {
             case POSITION:
                 updatePosition();
                 break;
-//            case BACK:
-//                mainMenu();
-//                break;
+            case BACK:
+                Console.goBack(EmployeeActionMenu.INSTANCE);
+                break;
         }
 
     }

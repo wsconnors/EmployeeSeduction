@@ -19,7 +19,7 @@ public class Employee extends Person {
         super(id,firstName,lastName,phoneNumber);
     }
 
-    Employee(int id,String firstName,String lastName, String phoneNumber, String address){
+    Employee(int id, String firstName,String lastName, String phoneNumber, String address){
         super(id,firstName,lastName,phoneNumber,address);
     }
 

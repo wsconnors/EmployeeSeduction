@@ -34,7 +34,7 @@ public class EmployeeSelectionMenu extends Menu{
     }
 
     public Employee askForEmployeeId() {
-        int employee = Console.getInt("Incorrect Id number. Please enter employee's  Id number.");
+        int employee = Console.getInt("Please enter employee's  Id number.");
         Employee aEmployee = EmployeeWareHouse.getEmployeeById(employee);
         return aEmployee;
     }
@@ -47,7 +47,7 @@ public class EmployeeSelectionMenu extends Menu{
     }
 
     public Employee askForEmployeeLastName() {
-        String employee = Console.getString("Incorrect last name. Please enter employee's  last name.");
+        String employee = Console.getString("Please enter employee's  last name.");
         Employee aEmployee = EmployeeWareHouse.getEmployeeByLastName(employee);
         return aEmployee;
     }

@@ -28,9 +28,9 @@ public class EmployeeActionMenu extends Menu {
             case DELETE:
                 delete();
                 break;
-//            case BACK:
-//                mainMenu();
-//                break;
+            case BACK:
+                Console.goBack(EmployeeSelectionMenu.INSTANCE);
+                break;
         }
 
     }
