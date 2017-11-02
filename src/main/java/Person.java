@@ -1,22 +1,21 @@
 public class Person {
-    private int id;
+    private int id = (int)Math.floor(Math.random()*1000);
     private String firstName;
     private String lastName;
     private String phoneNumber;
     private String address;
 
-    public Person(int id, String firstName, String lastName){
-        this(id,firstName,lastName,"Not given.", "Not given.");
+    public Person(String firstName, String lastName){
+        this(firstName,lastName,"Not given.", "Not given.");
 
     }
 
-    public Person(int id, String firstName, String lastName, String phoneNumber){
-        this(id,firstName,lastName,phoneNumber, "Not given.");
+    public Person(String firstName, String lastName, String phoneNumber){
+        this(firstName,lastName,phoneNumber, "Not given.");
 
     }
 
-    public Person(int id,String firstName,String lastName, String phoneNumber, String address){
-        this.id = id;
+    public Person(String firstName,String lastName, String phoneNumber, String address){
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;

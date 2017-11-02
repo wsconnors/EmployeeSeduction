@@ -31,13 +31,12 @@ public class EmployeeDirectoryMenu extends Menu{
 
 
     private void createEmployee() {
-        int newEmployeeId = Console.getInt("Please enter the new employee's Id.");
         String newEmployeeFirstName = Console.getString("Please enter the first name of the new employee.");
         String newEmployeeLastName = Console.getString("Please enter the last name of the new employee.");
         String newEmployeePhoneNumber = Console.getString("Please enter the phone number of the new employee.");
         String newEmployeeAddress = Console.getString("Please enter the address of the new employee.");
 
-        Employee aNewEmployee = new Employee(newEmployeeId, newEmployeeFirstName,
+        Employee aNewEmployee = new Employee(newEmployeeFirstName,
                 newEmployeeLastName, newEmployeePhoneNumber, newEmployeeAddress);
 
         EmployeeWareHouse.addEmployee(aNewEmployee);

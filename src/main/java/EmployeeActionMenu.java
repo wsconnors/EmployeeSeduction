@@ -10,7 +10,7 @@ public class EmployeeActionMenu extends Menu {
         this.selectedEmployee = selectedEmployee;
     }
 
-    enum employeeActionEnums {UPDATE, DELETE, BACK};
+    public enum employeeActionEnums {UPDATE, DELETE, BACK};
 
 
 
