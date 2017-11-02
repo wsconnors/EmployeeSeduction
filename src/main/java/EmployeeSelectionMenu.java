@@ -4,7 +4,6 @@ public class EmployeeSelectionMenu extends Menu{
     enum employeeSelectionEnum {
         FIND_BY_ID,
         FIND_BY_LAST_NAME,
-        FIND_BY_DEPARTMENT,
         BACK,
         QUIT}
 
@@ -21,9 +20,6 @@ public class EmployeeSelectionMenu extends Menu{
             case FIND_BY_LAST_NAME:
                 findByEmployeeLastname();
                 break;
-            case FIND_BY_DEPARTMENT:
-                findByEmployeeDepartment();
-                break;
             case BACK:
                 Console.goBack(EmployeeDirectoryMenu.INSTANCE);
                 break;
@@ -33,8 +29,8 @@ public class EmployeeSelectionMenu extends Menu{
     public void findByEmployeeId() {
         Employee aEmployee = askForEmployeeId();
         aEmployee = checkEmployeeExistence(aEmployee, "Id number");
-        EmployeeActionMenu aActionMenu = new EmployeeActionMenu(aEmployee);
-        aActionMenu.display();
+        EmployeeActionMenu.INSTANCE.setSelectedEmployee(aEmployee);
+        EmployeeActionMenu.INSTANCE.display();
     }
 
     public Employee askForEmployeeId() {
@@ -46,26 +42,13 @@ public class EmployeeSelectionMenu extends Menu{
     public void findByEmployeeLastname() {
         Employee aEmployee = askForEmployeeLastName();
         aEmployee = checkEmployeeExistence(aEmployee, "last name");
-        EmployeeActionMenu aActionMenu = new EmployeeActionMenu(aEmployee);
-        aActionMenu.display();
+        EmployeeActionMenu.INSTANCE.setSelectedEmployee(aEmployee);
+        EmployeeActionMenu.INSTANCE.display();
     }
 
     public Employee askForEmployeeLastName() {
         String employee = Console.getString("Incorrect last name. Please enter employee's  last name.");
         Employee aEmployee = EmployeeWareHouse.getEmployeeByLastName(employee);
-        return aEmployee;
-    }
-
-    public void findByEmployeeDepartment() {
-        Employee aEmployee = askForEmployeeDepartment();
-        aEmployee = checkEmployeeExistence(aEmployee, "department");
-        EmployeeActionMenu aActionMenu = new EmployeeActionMenu(aEmployee);
-        aActionMenu.display();
-    }
-
-    public Employee askForEmployeeDepartment() {
-        String employee = Console.getString("Incorrect department. Please enter employee's  department.");
-        Employee aEmployee = EmployeeWareHouse.getEmployeeByDepartment(employee);
         return aEmployee;
     }
 
@@ -75,8 +58,6 @@ public class EmployeeSelectionMenu extends Menu{
                 askForEmployeeId();
             } else if ("last name".equalsIgnoreCase(checkType)) {
                 askForEmployeeLastName();
-            } else if ("department".equalsIgnoreCase(checkType)) {
-                askForEmployeeDepartment();
             }
         }
 

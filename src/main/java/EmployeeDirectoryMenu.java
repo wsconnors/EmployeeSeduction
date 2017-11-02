@@ -43,8 +43,7 @@ public class EmployeeDirectoryMenu extends Menu{
     }
 
     private void employeeSelection() {
-        EmployeeSelectionMenu employeeSelectionMenuMenu = new EmployeeSelectionMenu();
-        employeeSelectionMenuMenu.display();
+        EmployeeSelectionMenu.INSTANCE.display();
     }
 }
 

@@ -1,12 +1,21 @@
 public class EmployeeUpdateMenu extends Menu {
+    public static final EmployeeUpdateMenu INSTANCE = new EmployeeUpdateMenu();
 
-    enum employeeUpdateEnums {FIRST_NAME, LAST_NAME, ADDRESS, PHONE_NUMBER, SALARY, SALARY_OR_HOURLY, BENEFITS, DEPARTMENT, POSITION, BACK};
+    enum employeeUpdateEnums {FIRST_NAME, LAST_NAME, ADDRESS, PHONE_NUMBER, SALARY,
+        SALARY_OR_HOURLY, BENEFITS, DEPARTMENT, POSITION, BACK};
 
-    Employee selectedEmployee;
+    private Employee selectedEmployee;
 
-    public EmployeeUpdateMenu(Employee selectedEmployee) {
-        super(employeeUpdateEnums.values());
+    public Employee getSelectedEmployee() {
+        return selectedEmployee;
+    }
+
+    public void setSelectedEmployee(Employee selectedEmployee) {
         this.selectedEmployee = selectedEmployee;
+    }
+
+    public EmployeeUpdateMenu() {
+        super(employeeUpdateEnums.values());
     }
 
     @Override
@@ -48,36 +57,36 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     public void updateAddress() {
-         selectedEmployee.setAddress(Console.getString("Enter new address: "));
+         this.selectedEmployee.setAddress(Console.getString("Enter new address: "));
     }
 
     public void updateLastName() {
-        selectedEmployee.setLastName(Console.getString("Enter new last name: "));
+        this.selectedEmployee.setLastName(Console.getString("Enter new last name: "));
     }
 
     public void updateFirstName() {
-        selectedEmployee.setFirstName(Console.getString("Enter new first name: "));
+        this.selectedEmployee.setFirstName(Console.getString("Enter new first name: "));
     }
 
     private void updatePhoneNumber(){
-        selectedEmployee.setPhoneNumber(Console.getString("Enter new first name: "));
+        this.selectedEmployee.setPhoneNumber(Console.getString("Enter new first name: "));
     }
 
     private void updateSalary(){
-        selectedEmployee.setSalary(Console.getDouble("Enter a new salary amount: "));
+        this.selectedEmployee.setSalary(Console.getDouble("Enter a new salary amount: "));
     }
 
     private void updateSalaryOrHourly(){
         String input = Console.getString("Salary or Hourly? ");
         //needs if statement to set true or false
         if("Salary".equalsIgnoreCase(input)){
-            selectedEmployee.setIsSalary(true);
+            this.selectedEmployee.setIsSalary(true);
         }
         else if("Hourly".equalsIgnoreCase(input)){
-            selectedEmployee.setIsSalary(false);
+            this.selectedEmployee.setIsSalary(false);
         }
         else{
-            //ERROR
+            System.out.println("Error!");
         }
     }
 
@@ -86,15 +95,15 @@ public class EmployeeUpdateMenu extends Menu {
 
         if("silver".equalsIgnoreCase(input)){
             BenefitSilver silver = new BenefitSilver();
-            selectedEmployee.setBenefitPackage(silver);
+            this.selectedEmployee.setBenefitPackage(silver);
         }
         else if("gold".equalsIgnoreCase(input)){
             BenefitGold gold = new BenefitGold();
-            selectedEmployee.setBenefitPackage(gold);
+            this.selectedEmployee.setBenefitPackage(gold);
         }
         else if("platinum".equalsIgnoreCase(input)){
             BenefitPlat platinum = new BenefitPlat();
-            selectedEmployee.setBenefitPackage(platinum);
+            this.selectedEmployee.setBenefitPackage(platinum);
         }
     }
 
@@ -103,21 +112,21 @@ public class EmployeeUpdateMenu extends Menu {
 
         switch (Department.valueOf(input)){
             case MANAGEMENT:
-                selectedEmployee.setDepartment(Department.MANAGEMENT);
+                this.selectedEmployee.setDepartment(Department.MANAGEMENT);
                 break;
             case FIANCE:
-                selectedEmployee.setDepartment(Department.FIANCE);
+                this.selectedEmployee.setDepartment(Department.FIANCE);
                 break;
             case LOGISTICS:
-                selectedEmployee.setDepartment(Department.FIANCE);
+                this.selectedEmployee.setDepartment(Department.FIANCE);
                 break;
             default:
-                //ERROR
+                System.out.println("Error!");
         }
     }
 
     private void updatePosition(){
-        selectedEmployee.setPosition(Console.getString("Enter a new position: "));
+        this.selectedEmployee.setPosition(Console.getString("Enter a new position: "));
     }
 
 //    private void mainMenu(){

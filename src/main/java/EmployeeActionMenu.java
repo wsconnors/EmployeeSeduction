@@ -1,12 +1,21 @@
 public class EmployeeActionMenu extends Menu {
+    public static final EmployeeActionMenu INSTANCE = new EmployeeActionMenu();
+    private Employee selectedEmployee;
+
+    public Employee getSelectedEmployee() {
+        return selectedEmployee;
+    }
+
+    public void setSelectedEmployee(Employee selectedEmployee) {
+        this.selectedEmployee = selectedEmployee;
+    }
 
     enum employeeActionEnums {UPDATE, DELETE, BACK};
 
-    Employee selectedEmployee;
 
-    public EmployeeActionMenu(Employee selectedEmployee) {
+
+    public EmployeeActionMenu() {
         super(employeeActionEnums.values());
-        this.selectedEmployee = selectedEmployee;
     }
 
     @Override
@@ -27,12 +36,12 @@ public class EmployeeActionMenu extends Menu {
     }
 
     private void update() {
-        EmployeeUpdateMenu employeeUpdateMenu = new EmployeeUpdateMenu(selectedEmployee);
-        employeeUpdateMenu.display();
+        EmployeeUpdateMenu.INSTANCE.setSelectedEmployee(this.selectedEmployee);
+        EmployeeUpdateMenu.INSTANCE.display();
     }
 
     private void delete() {
-        EmployeeWareHouse.removeEmployee(selectedEmployee);
+        EmployeeWareHouse.removeEmployee(this.selectedEmployee);
     }
 
 //    private void mainMenu(){

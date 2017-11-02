@@ -32,8 +32,7 @@ public class MainMenu extends Menu{
     }
 
     private void employeeDirectory(){
-        EmployeeDirectoryMenu employeeDirectoryMenuMenu = new EmployeeDirectoryMenu();
-        employeeDirectoryMenuMenu.display();
+        EmployeeDirectoryMenu.INSTANCE.display();
     }
 }
 
