@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class EmployeeTest {
@@ -67,20 +68,20 @@ public class EmployeeTest {
 
     }
 
-//    @Test
-//    public void incidentTest(){
-//        Date now = new Date();
-//        String expected = "employee seduction";
-//        ArrayList<Employee> involved = new ArrayList<Employee>();
-//        involved.add(employee1);
-//        involved.add(employee2);
-//        Incident incident = new Incident(now,expected,involved);
-//
-//        String actual = incident.getDescription();
-//
-//        Assert.assertEquals(expected,actual);
-//
-//    }
+    @Test
+    public void incidentTest(){
+        Date now = new Date();
+        String expected = "employee seduction";
+        ArrayList<Employee> involved = new ArrayList<Employee>();
+        involved.add(employee1);
+        involved.add(employee2);
+        Incident incident = new Incident(involved,expected,"date");
+
+        String actual = incident.getDescription();
+
+        Assert.assertEquals(expected,actual);
+
+    }
 
 
 

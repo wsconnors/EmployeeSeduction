@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class IncidentWareHouseTest {
 
-    Employee testEmployeeOne = new Employee();
+    Employee testEmployeeOne = new Employee(123,"billy","bob");
     ArrayList <Employee> employeesInvolvedTest = new ArrayList <>();
 
     Incident testIncident = new Incident(employeesInvolvedTest, "fight", "11/01/2017");

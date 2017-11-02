@@ -8,7 +8,7 @@ public class Employee extends Person {
     private double Salary;
     private boolean isSalary;
     private ArrayList<TimeCard> timeCardList = new ArrayList<TimeCard>();
-    //    private ArrayList<Incident> incidents;
+    private ArrayList<Incident> incidents;
     private BenefitPackage benefitPackage;
 
     Employee(int id, String firstName, String lastName) {
@@ -74,13 +74,13 @@ public class Employee extends Person {
         this.benefitPackage = benefitPackage;
     }
 
-//    public ArrayList<Incident> getIncidents() {
-//        return incidents;
-//    }
-//
-//    public void addIncident(Incident incident) {
-//        this.incidents.add(incident);
-//    }
+    public ArrayList<Incident> getIncidents() {
+        return incidents;
+    }
+
+    public void addIncident(Incident incident) {
+        this.incidents.add(incident);
+    }
     public void clockIn(){
         Date now = new Date();
         TimeCard timeCard = new TimeCard(now);
