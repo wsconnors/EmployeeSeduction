@@ -42,11 +42,8 @@ public class EmployeeActionMenu extends Menu {
 
     private void delete() {
         EmployeeWareHouse.removeEmployee(this.selectedEmployee);
+        Console.print(this.selectedEmployee.toString());
+        Console.print("Employee has been deleted.\n");
+        EmployeeActionMenu.INSTANCE.display();
     }
-
-//    private void mainMenu(){
-////        MainMenu mainMenu = new MainMenu();
-////        mainMenu.display();
-//    }
-
 }
