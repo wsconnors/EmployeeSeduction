@@ -18,7 +18,7 @@ public class EmployeeSelectionMenu extends Menu{
                 findByEmployeeId();
                 break;
             case FIND_BY_LAST_NAME:
-                findByEmployeeLastname();
+                findByEmployeeLastName();
                 break;
             case BACK:
                 Console.goBack(EmployeeDirectoryMenu.INSTANCE);
@@ -39,7 +39,7 @@ public class EmployeeSelectionMenu extends Menu{
         return aEmployee;
     }
 
-    public void findByEmployeeLastname() {
+    public void findByEmployeeLastName() {
         Employee aEmployee = askForEmployeeLastName();
         aEmployee = checkEmployeeExistence(aEmployee, "last name");
         EmployeeActionMenu.INSTANCE.setSelectedEmployee(aEmployee);
