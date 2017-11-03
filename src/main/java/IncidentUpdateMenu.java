@@ -69,8 +69,8 @@ public class IncidentUpdateMenu extends Menu{
             employeesInvolved.add(employeeInvolved);
             menuChoice = Console.getString("Would you like to add another employee?: 'Yes' or 'No'");
         }
-
         this.incident.getEmployeesInvolved().addAll(employeesInvolved);
+        IncidentUpdateMenu.INSTANCE.display();
     }
 
     public void deleteEmployeesInvolved() {

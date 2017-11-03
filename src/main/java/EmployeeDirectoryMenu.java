@@ -65,7 +65,7 @@ public class EmployeeDirectoryMenu extends Menu {
 
             String newIsEmployeeSalaryOrWage = Console.getString("Is the employee Salary or Wage? 'true' 'false'");
             aNewEmployee.setIsSalary(Boolean.parseBoolean(newIsEmployeeSalaryOrWage));
-            
+
             aNewEmployee.setBenefitPackage(new BenefitSilver());
             EmployeeUpdateMenu.INSTANCE.setSelectedEmployee(aNewEmployee);
             EmployeeUpdateMenu.INSTANCE.updateBenefits();
@@ -87,9 +87,9 @@ public class EmployeeDirectoryMenu extends Menu {
     @Override
     public String toString() {
         String enumStrings =
-                "1) Create Employee,\n" +
-                "2) Find Employee,\n" +
-                "3) Back,\n" +
+                "1) Create Employee\n" +
+                "2) Find Employee\n" +
+                "3) Back\n" +
                 "4) Quit";
         return enumStrings;
     }
