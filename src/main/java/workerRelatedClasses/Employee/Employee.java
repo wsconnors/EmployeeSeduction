@@ -1,6 +1,7 @@
 package workerRelatedClasses.Employee;
 
 import benefits.BenefitPackage;
+import benefits.concrete.BenefitSilver;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,9 +12,12 @@ public class Employee extends Person {
     private Enum department;
     private double Salary;
     private boolean isSalary;
+
     private ArrayList <TimeCard> timeCardList = new ArrayList <TimeCard>();
     //    private ArrayList<workerRelatedClasses.incidents.Incident> incidents;
-    private BenefitPackage benefitPackage;
+    private BenefitPackage benefitPackage = new BenefitSilver();
+
+
 
     public Employee(String firstName, String lastName, String phoneNumber, String address) {
         super(firstName, lastName, phoneNumber, address);
