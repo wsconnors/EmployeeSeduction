@@ -7,7 +7,6 @@ public abstract class Menu {
 
     public abstract void userMenuSelection(String input);
 
-
     public void display() {
         String userInput;
 
@@ -18,14 +17,15 @@ public abstract class Menu {
     }
 
     public String getInput() {
-        Console.print("====================================================");
         //Console.print(this.toString());
+        this.menuTitle();
         for (Enum e: menuEnum) {
             Console.print(e.name());
         }
         return Console.getString("");
     }
 
+    public abstract void menuTitle();
 
 
 }

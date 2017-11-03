@@ -18,6 +18,20 @@ public class IncidentActionMenu extends Menu{
     }
 
     @Override
+    public void menuTitle() {
+        Console.print("  __  __       _         __  __                  \n" +
+                " |  \\/  |     (_)       |  \\/  |                 \n" +
+                " | \\  / | __ _ _ _ __   | \\  / | ___ _ __  _   _ \n" +
+                " | |\\/| |/ _` | | '_ \\  | |\\/| |/ _ \\ '_ \\| | | |\n" +
+                " | |  | | (_| | | | | | | |  | |  __/ | | | |_| |\n" +
+                " |_|  |_|\\__,_|_|_| |_| |_|  |_|\\___|_| |_|\\__,_|\n" +
+                "                                                 \n" +
+                "                                                 ");
+        Console.print(
+                "==========================================================");
+    }
+
+    @Override
     public void userMenuSelection(String input) {
 
         switch (IncidentActionMenu.incidentUpdateEnums.valueOf(input)){

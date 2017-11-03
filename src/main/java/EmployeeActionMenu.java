@@ -12,10 +12,13 @@ public class EmployeeActionMenu extends Menu {
 
     public enum employeeActionEnums {UPDATE, PRINT_INFO, DELETE, BACK};
 
-
-
     public EmployeeActionMenu() {
         super(employeeActionEnums.values());
+    }
+
+    @Override
+    public void menuTitle() {
+
     }
 
     @Override
