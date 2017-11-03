@@ -36,5 +36,20 @@ public class Console {
     public static void goBack(Menu aMenu) {
         aMenu.display();
     }
+
+    public static String checkYesOrNo() {
+        String addMoreInfo;
+        do {
+            addMoreInfo = Console.getString(
+                    "Would you like to add Salary, Benefits, Department, " +
+                            "and Position to this employee?('Yes' or 'No')");
+            try {
+                YesNoException.throwYesNoException(addMoreInfo);
+            }catch (Exception e) {
+                Console.print("You didn't enter 'Yes' or 'No'.\n");
+            }
+        } while (!("Yes".equalsIgnoreCase(addMoreInfo) || "No".equalsIgnoreCase(addMoreInfo)));
+        return addMoreInfo;
+    }
 }
 
