@@ -150,7 +150,7 @@ public class EmployeeTest {
                 "Department: MANAGEMENT\n" +
                 "Position: employee Seduction\n" +
                 "Salary: 1000000.0\n" +
-                "Benefit Package: benefits.concrete.BenefitGold@1376c05c\n";
+                "Benefit Package: Gold Package\n";
 
         String actual = employee1.toString();
 
