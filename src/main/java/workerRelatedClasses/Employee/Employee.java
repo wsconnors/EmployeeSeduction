@@ -2,6 +2,7 @@ package workerRelatedClasses.Employee;
 
 import benefits.BenefitPackage;
 import benefits.concrete.BenefitSilver;
+import workerRelatedClasses.incidents.Incident;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,7 +15,7 @@ public class Employee extends Person {
     private boolean isSalary;
 
     private ArrayList <TimeCard> timeCardList = new ArrayList <TimeCard>();
-    //    private ArrayList<workerRelatedClasses.incidents.Incident> incidents;
+    private ArrayList<Incident> incidents;
     private BenefitPackage benefitPackage = new BenefitSilver();
 
 
@@ -72,13 +73,14 @@ public class Employee extends Person {
         this.benefitPackage = benefitPackage;
     }
 
-    //    public ArrayList<workerRelatedClasses.incidents.Incident> getIncidents() {
-//        return incidents;
-//    }
-//
-//    public void addIncident(workerRelatedClasses.incidents.Incident incident) {
-//        this.incidents.add(incident);
-//    }
+        public ArrayList<Incident> getIncidents() {
+        return incidents;
+    }
+
+    public void addIncident(Incident incident) {
+        this.incidents.add(incident);
+    }
+
     public void clockIn() {
         Date now = new Date();
         TimeCard timeCard = new TimeCard(now);
@@ -109,7 +111,7 @@ public class Employee extends Person {
                 "\nAddress: " + super.getAddress() +
                 "\nDepartment: " + this.getDepartment() +
                 "\nPosition: " + this.getPosition() +
-                "\nSalary: " + this.getSalary() +
+                "\nSalary: " + String.format("$%,.2f",this.getSalary()) +
                 "\nBenefit Package: " + this.getBenefitPackage().getName() + "\n";
         return output;
     }
