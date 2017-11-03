@@ -9,6 +9,7 @@ public class IncidentTest {
 
     Employee testEmployeeOne = new Employee("John", "Jones", "123", "Home");
     Employee testEmployeeTwo = new Employee("Ricky", "Smith", "123", "Home");
+    Employee testEmployeeThree = new Employee("Billy", "Bob", "123", "Home");
 
     ArrayList <Employee> testArrayList = new ArrayList <>();
     ArrayList <Employee> testArrayListTwo = new ArrayList <>();
@@ -24,54 +25,36 @@ public class IncidentTest {
         testArrayList.add(testEmployeeOne);
         testArrayList.add(testEmployeeTwo);
 
-        ArrayList <Employee> expected = null;
-        ArrayList <Employee> actual = testIncident.getEmployeesInvolved();
+        String expected = "John";
+
+        ArrayList <Employee> employeesInvolved = testIncident.getEmployeesInvolved();
+        String actual = employeesInvolved.get(0).getFirstName();
 
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void setEmployeesInvolved() {
-        testArrayListTwo.add(testEmployeeOne);
-        testArrayListTwo.add(testEmployeeTwo);
-
+        testArrayListTwo.add(testEmployeeThree);
 
         testIncident.setEmployeesInvolved(testArrayList);
 
-        ArrayList<Employee> expected = null;
-        ArrayList<Employee> actual = testIncident.getEmployeesInvolved();
+        String expected = "Billy";
+
+        ArrayList<Employee> employeesInvolved = testIncident.getEmployeesInvolved();
+        String actual = employeesInvolved.get(0).getFirstName();
 
         Assert.assertEquals(expected,actual);
 
-
-
     }
 
-    @Test
-    public void getDescription() {
-
-        String expected = "fight";
-        String actual = testIncident.getDescription();
-
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
+    @Test       // get and set test
     public void setDescription() {
+        String expected = "blahblahblah";
 
         testIncident.setDescription("blahblahblah");
 
-        String expected = "blahblahblah";
-
         String actual = testIncident.getDescription();
-
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void getDate() {
-        String expected = "11/01/2017";
-        String actual = testIncident.getDate();
 
         Assert.assertEquals(expected, actual);
     }
@@ -89,8 +72,10 @@ public class IncidentTest {
 
     @Test
     public void getId() {
-        int expected = 1;
+
+        int expected = 6;
         int actual = testIncident.getId();
+
 
         Assert.assertEquals(expected, actual);
 
@@ -98,12 +83,14 @@ public class IncidentTest {
 
     @Test
     public void toStringTest(){
-        String expected = "workerRelatedClasses.incidents.Incident Number: 2\n" +
+        testEmployeeOne.setId(100);
+        testEmployeeTwo.setId(200);
+        String expected = "Incident Number: 10\n" +
                 "Employees involved :\n" +
-                "\tName: John Jones ID: 256\n" +
-                "\tName: Ricky Smith ID: 157\n" +
+                "\tName: John Jones ID: 100\n" +
+                "\tName: Ricky Smith ID: 200\n" +
                 "Description: employee seduction\n" +
-                "Date: yesterday";
+                "Date: yesterday\n";
         testArrayList.add(testEmployeeOne);
         testArrayList.add(testEmployeeTwo);
 

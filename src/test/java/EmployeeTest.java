@@ -1,4 +1,5 @@
 import benefits.BenefitPackage;
+import benefits.concrete.BenefitGold;
 import benefits.concrete.BenefitSilver;
 import org.junit.Assert;
 import org.junit.Test;
@@ -132,5 +133,27 @@ public class EmployeeTest {
         double actual = employee1.getHourlyWage();
 
         Assert.assertEquals(expected,actual,0);
+    }
+
+    @Test
+    public void toStringTest(){
+        employee1.setId(69);
+        employee1.setDepartment(Department.MANAGEMENT);
+        employee1.setPosition("employee Seduction");
+        employee1.setSalary(1000000);
+        BenefitPackage gold = new BenefitGold();
+        employee1.setBenefitPackage(gold);
+        String expected = "\nEmployee ID: 69\n" +
+                "Name: billy lastName\n" +
+                "Phone Number: 123\n" +
+                "Address: Home\n" +
+                "Department: MANAGEMENT\n" +
+                "Position: employee Seduction\n" +
+                "Salary: 1000000.0\n" +
+                "Benefit Package: Gold Package\n";
+
+        String actual = employee1.toString();
+
+        Assert.assertEquals(expected,actual);
     }
 }

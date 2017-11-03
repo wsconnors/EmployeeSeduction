@@ -11,12 +11,12 @@ public class EmployeeWareHouseTest {
     @Test       // test getEmployeeList
     public void addEmployeeTest(){
         EmployeeWareHouse.clearEmployees();
-        int expected = 123;
+        String expected = "billy";
 
         EmployeeWareHouse.addEmployee(employee);
         ArrayList employeeList = EmployeeWareHouse.getEmployeeList();
         Employee firstEmployee = (Employee)employeeList.get(0);
-        int actual = firstEmployee.getId();
+        String actual = firstEmployee.getFirstName();
 
         Assert.assertEquals(expected,actual);
 
@@ -27,8 +27,10 @@ public class EmployeeWareHouseTest {
         EmployeeWareHouse.clearEmployees();
         String expected = "billy";
         EmployeeWareHouse.addEmployee(employee);
+        int employeeId = employee.getId();
 
-        Employee pullEmployee = EmployeeWareHouse.getEmployeeById(123);
+        Employee pullEmployee = EmployeeWareHouse.getEmployeeById(employeeId);
+
         String actual = pullEmployee.getFirstName();
 
         Assert.assertEquals(expected,actual);
@@ -49,11 +51,11 @@ public class EmployeeWareHouseTest {
     @Test
     public void getEmployeeByLastNameTest(){
         EmployeeWareHouse.clearEmployees();
-        int expected = 123;
+        String expected = "billy";
         EmployeeWareHouse.addEmployee(employee);
 
         Employee pullEmployee = EmployeeWareHouse.getEmployeeByLastName("bob");
-        int actual = pullEmployee.getId();
+        String actual = pullEmployee.getFirstName();
 
         Assert.assertEquals(expected,actual);
     }
@@ -61,15 +63,29 @@ public class EmployeeWareHouseTest {
     @Test
     public void removeEmployeeTest(){
         EmployeeWareHouse.clearEmployees();
-        int expected1 = 123;
+        String expected1 = "billy";
         Employee expected2 = null;
         EmployeeWareHouse.addEmployee(employee);
-        int actual1 = EmployeeWareHouse.getEmployeeById(123).getId();
+        int employeeId = employee.getId();
 
+        String actual1 = EmployeeWareHouse.getEmployeeById(employeeId).getFirstName();
         EmployeeWareHouse.removeEmployee(employee);
-        Employee actual2 = EmployeeWareHouse.getEmployeeById(123);
+        Employee actual2 = EmployeeWareHouse.getEmployeeById(employeeId);
 
         Assert.assertEquals(expected1,actual1);
         Assert.assertEquals(expected2,actual2);
+    }
+
+    @Test
+    public void clearEmployeeTest(){
+        EmployeeWareHouse.clearEmployees();
+        int expected = 0;
+
+        EmployeeWareHouse.addEmployee(employee);
+        EmployeeWareHouse.clearEmployees();
+
+        int actual = EmployeeWareHouse.getEmployeeList().size();
+
+        Assert.assertEquals(expected,actual);
     }
 }
