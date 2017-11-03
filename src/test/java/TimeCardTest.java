@@ -17,7 +17,7 @@ public class TimeCardTest {
         Assert.assertEquals(expected,actual);
     }
 
-    @Test
+    @Test       // get and set
     public void clockOutTest(){
         Date clockOut = new Date();
         Date expected = clockOut;

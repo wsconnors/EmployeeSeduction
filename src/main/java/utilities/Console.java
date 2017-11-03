@@ -51,5 +51,6 @@ public class Console {
         } while (!("Yes".equalsIgnoreCase(addMoreInfo) || "No".equalsIgnoreCase(addMoreInfo)));
         return addMoreInfo;
     }
+
 }
 
