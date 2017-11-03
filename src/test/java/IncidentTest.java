@@ -1,14 +1,14 @@
 import org.junit.Assert;
 import org.junit.Test;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.incidents.Incident;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
-
 public class IncidentTest {
 
-    Employee testEmployeeOne = new Employee(1, "John", "Jones");
-    Employee testEmployeeTwo = new Employee(2, "Ricky", "Smith");
+    Employee testEmployeeOne = new Employee("John", "Jones", "123", "Home");
+    Employee testEmployeeTwo = new Employee("Ricky", "Smith", "123", "Home");
 
     ArrayList <Employee> testArrayList = new ArrayList <>();
     ArrayList <Employee> testArrayListTwo = new ArrayList <>();
@@ -16,7 +16,7 @@ public class IncidentTest {
 
 
     Incident testIncident = new Incident(testArrayList, "fight", "11/01/2017");
-    Incident testIncidentTwo = new Incident(testArrayList, "asdf", "asdfasdf");
+    Incident testIncidentTwo = new Incident(testArrayList, "employee seduction", "yesterday");
 
 
     @Test
@@ -32,6 +32,8 @@ public class IncidentTest {
 
     @Test
     public void setEmployeesInvolved() {
+        testArrayListTwo.add(testEmployeeOne);
+        testArrayListTwo.add(testEmployeeTwo);
 
 
         testIncident.setEmployeesInvolved(testArrayListTwo);
@@ -60,6 +62,7 @@ public class IncidentTest {
         testIncident.setDescription("blahblahblah");
 
         String expected = "blahblahblah";
+
         String actual = testIncident.getDescription();
 
         Assert.assertEquals(expected, actual);
@@ -91,6 +94,22 @@ public class IncidentTest {
 
         Assert.assertEquals(expected, actual);
 
+    }
+
+    @Test
+    public void toStringTest(){
+        String expected = "workerRelatedClasses.incidents.Incident Number: 2\n" +
+                "Employees involved :\n" +
+                "\tName: John Jones ID: 256\n" +
+                "\tName: Ricky Smith ID: 157\n" +
+                "Description: employee seduction\n" +
+                "Date: yesterday";
+        testArrayList.add(testEmployeeOne);
+        testArrayList.add(testEmployeeTwo);
+
+        String actual = testIncident.toString();
+
+        Assert.assertEquals(expected,actual);
     }
 
 

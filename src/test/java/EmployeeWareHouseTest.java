@@ -1,10 +1,12 @@
 import org.junit.Assert;
 import org.junit.Test;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
 
 import java.util.ArrayList;
 
 public class EmployeeWareHouseTest {
-    Employee employee = new Employee(123,"billy","bob");
+    Employee employee = new Employee("billy","bob", "123", "Home");
 
     @Test       // test getEmployeeList
     public void addEmployeeTest(){

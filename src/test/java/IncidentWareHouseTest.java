@@ -1,11 +1,14 @@
 import org.junit.Assert;
 import org.junit.Test;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.incidents.Incident;
+import workerRelatedClasses.incidents.IncidentWareHouse;
 
 import java.util.ArrayList;
 
 public class IncidentWareHouseTest {
 
-    Employee testEmployeeOne = new Employee(3, "Richard", "Dick");
+    Employee testEmployeeOne = new Employee("Richard", "Dick", "123", "Home");
     ArrayList <Employee> employeesInvolvedTest = new ArrayList <>();
 
     Incident testIncident = new Incident(employeesInvolvedTest, "fight", "11/01/2017");
@@ -56,11 +59,11 @@ public class IncidentWareHouseTest {
 //    @Test
 //    public void getIncidentByEmployeeTest() {
 //        employeesInvolvedTest.add(testEmployeeOne);
-//        ArrayList<Incident> incidentArrayList = IncidentWareHouse.getIncidents();
+//        ArrayList<workerRelatedClasses.incidents.Incident> incidentArrayList = workerRelatedClasses.incidents.IncidentWareHouse.getIncidents();
 //
 //
 //        int expected = 1;
-//        int actual = IncidentWareHouse.getIncidentByEmployee(testEmployeeOne).getId();
+//        int actual = workerRelatedClasses.incidents.IncidentWareHouse.getIncidentByEmployee(testEmployeeOne).getId();
 //
 //        Assert.assertEquals(expected,actual);
 //

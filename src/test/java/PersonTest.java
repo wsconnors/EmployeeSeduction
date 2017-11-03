@@ -1,9 +1,10 @@
 import org.junit.Assert;
 import org.junit.Test;
+import workerRelatedClasses.Employee.Person;
 
 public class PersonTest {
 
-    Person newPerson = new Person(123,"wes","connors");
+    Person newPerson = new Person("wes","connors", "123", "Home");
 
     @Test
     public void IdTest(){

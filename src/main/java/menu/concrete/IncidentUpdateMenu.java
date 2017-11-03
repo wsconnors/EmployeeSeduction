@@ -1,6 +1,14 @@
+package menu.concrete;
+
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
+import workerRelatedClasses.incidents.Incident;
+
 import java.util.ArrayList;
 
-public class IncidentUpdateMenu extends Menu{
+public class IncidentUpdateMenu extends Menu {
     public static final IncidentUpdateMenu INSTANCE = new IncidentUpdateMenu();
 
     public enum updateIncidentEnum {ADD_EMPLOYEE_INVOLVED, DELETE_EMPLOYEE_INVOLVED, DESCRIPTION, DATE, ID, BACK, QUIT}
@@ -17,6 +25,21 @@ public class IncidentUpdateMenu extends Menu{
 
     public IncidentUpdateMenu() {
         super(IncidentUpdateMenu.updateIncidentEnum.values());
+    }
+
+    @Override
+    public void menuTitle() {
+        Console.print(
+                "  _____            _     _            _     _    _           _       _        \n" +
+                " |_   _|          (_)   | |          | |   | |  | |         | |     | |       \n" +
+                "   | |  _ __   ___ _  __| | ___ _ __ | |_  | |  | |_ __   __| | __ _| |_ ___  \n" +
+                "   | | | '_ \\ / __| |/ _` |/ _ \\ '_ \\| __| | |  | | '_ \\ / _` |/ _` | __/ _ \\ \n" +
+                "  _| |_| | | | (__| | (_| |  __/ | | | |_  | |__| | |_) | (_| | (_| | ||  __/ \n" +
+                " |_____|_| |_|\\___|_|\\__,_|\\___|_| |_|\\__|  \\____/| .__/ \\__,_|\\__,_|\\__\\___| \n" +
+                "                                                  | |                         \n" +
+                "                                                  |_|                         ");
+        Console.print("========================================================================================");
+
     }
 
     @Override
@@ -54,8 +77,8 @@ public class IncidentUpdateMenu extends Menu{
             employeesInvolved.add(employeeInvolved);
             menuChoice = Console.getString("Would you like to add another employee?: 'Yes' or 'No'");
         }
-
         this.incident.getEmployeesInvolved().addAll(employeesInvolved);
+        IncidentUpdateMenu.INSTANCE.display();
     }
 
     public void deleteEmployeesInvolved() {
@@ -79,5 +102,18 @@ public class IncidentUpdateMenu extends Menu{
     public void updateIncidentDate() {
         this.incident.setDate(Console.getString("Enter new date: "));
         Console.goBack(IncidentsMenu.INSTANCE);
+    }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) Add Employee Involved\n" +
+                "2) Remove Employee Involved\n" +
+                "3) Edit Description\n" +
+                "4) Edit Date\n" +
+                "5) Edit Id\n" +
+                "6) Back\n" +
+                "7) Quit\n";
+        return output;
     }
 }

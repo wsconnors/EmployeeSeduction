@@ -1,8 +1,12 @@
-public class BenefitSilver extends BenefitPackage{
+package benefits.concrete;
+
+import benefits.BenefitPackage;
+
+public class BenefitSilver extends BenefitPackage {
 
     //lowest benefit package
 
-        private String name = "Silver Package";
+    private String name = "Silver Package";
 
     //silver package gets default 15 days / 3 weeks
 

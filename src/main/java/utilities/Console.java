@@ -1,22 +1,26 @@
+package utilities;
+
+import menu.Menu;
+
 import java.util.Scanner;
 
 public class Console {
-//    public scannerInput(String input) {}
+    private static Scanner sc = new Scanner(System.in);
 
     public static String getString(String prompt) {
-        Scanner sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
         System.out.println(prompt);
         return sc.nextLine();
     }
 
     public static double getDouble(String prompt) {
-        Scanner sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
         System.out.println(prompt);
         return sc.nextDouble();
     }
 
     public static int getInt(String prompt) {
-        Scanner sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
         System.out.println(prompt);
         return sc.nextInt();
     }
@@ -35,3 +39,4 @@ public class Console {
 
 
 }
+

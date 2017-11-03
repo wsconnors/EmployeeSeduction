@@ -1,3 +1,7 @@
+package workerRelatedClasses.incidents;
+
+import workerRelatedClasses.Employee.Employee;
+
 import java.util.ArrayList;
 
 public class Incident {
@@ -9,7 +13,7 @@ public class Incident {
 
     static int instanceCounter = 0;
 
-    public Incident(ArrayList<Employee> employeesInvolved,String description, String date) {
+    public Incident(ArrayList<Employee> employeesInvolved, String description, String date) {
         this.employeesInvolved = employeesInvolved;
         this.description = description;
         this.date = date;
@@ -54,5 +58,16 @@ public class Incident {
 
     private void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString(){
+        String output = "Incident Number: " + id;
+        output += "\nEmployees involved :";
+        for(Employee employee : employeesInvolved){
+            output += "\n\tName: "+employee.getFirstName()+" "+employee.getLastName()+" ID: "+employee.getId();
+        }
+        output += "\nDescription: " + description+ "\nDate: " + date + "\n";
+        return output;
     }
 }

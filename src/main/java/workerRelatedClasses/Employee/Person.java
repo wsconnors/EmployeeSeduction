@@ -1,26 +1,32 @@
+package workerRelatedClasses.Employee;
+
+
 public class Person {
-    private int id;
+    private int id =  Integer.parseInt(String.format("%04d",(int)Math.floor(Math.random()*1000)));
     private String firstName;
     private String lastName;
     private String phoneNumber;
     private String address;
 
-    public Person(int id, String firstName, String lastName){
-        this(id,firstName,lastName,"Not given.", "Not given.");
+    public Person(String firstName,String lastName, String phoneNumber, String address){
+        if (!newEmployeeIdCheck(id)) {
+            this.id =  Integer.parseInt(String.format("%04d",(int)Math.floor(Math.random()*1000)));
+        }
 
-    }
-
-    public Person(int id, String firstName, String lastName, String phoneNumber){
-        this(id,firstName,lastName,phoneNumber, "Not given.");
-
-    }
-
-    public Person(int id,String firstName,String lastName, String phoneNumber, String address){
-        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.address = address;
+    }
+
+    public boolean newEmployeeIdCheck(int id) {
+        boolean isIdOriginal = true;
+        for (Employee curemployee : EmployeeWareHouse.getEmployeeList()) {
+            if (id == curemployee.getId()) {
+                isIdOriginal = false;
+            }
+        }
+        return isIdOriginal;
     }
 
 
