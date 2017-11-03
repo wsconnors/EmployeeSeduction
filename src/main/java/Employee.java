@@ -9,7 +9,7 @@ public class Employee extends Person {
     private boolean isSalary;
     private ArrayList<TimeCard> timeCardList = new ArrayList<TimeCard>();
     //    private ArrayList<Incident> incidents;
-    private BenefitPackage benefitPackage;
+    private BenefitPackage benefitPackage = new BenefitSilver();
 
     Employee(int id, String firstName, String lastName) {
         super(id, firstName, lastName);
