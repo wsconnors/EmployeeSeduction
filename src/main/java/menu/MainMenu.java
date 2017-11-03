@@ -1,3 +1,9 @@
+package menu;
+
+import menu.concrete.EmployeeDirectoryMenu;
+import menu.concrete.IncidentsMenu;
+import utilities.Console;
+
 public class MainMenu extends Menu{
     public static final MainMenu INSTANCE = new MainMenu();
 
@@ -55,8 +61,8 @@ public class MainMenu extends Menu{
     @Override
     public String toString() {
         String enumStrings =
-                "1) Employee Directory\n" +
-                "2) Incident Reports\n" +
+                "1) workerRelatedClasses.Employee.Employee Directory\n" +
+                "2) workerRelatedClasses.incidents.Incident Reports\n" +
                 "3) Quit";
         return enumStrings;
     }

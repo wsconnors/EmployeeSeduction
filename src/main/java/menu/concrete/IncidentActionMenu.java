@@ -1,4 +1,10 @@
-public class IncidentActionMenu extends Menu{
+package menu.concrete;
+
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.incidents.Incident;
+
+public class IncidentActionMenu extends Menu {
     public static final IncidentActionMenu INSTANCE = new IncidentActionMenu();
 
     private Incident incident;
@@ -63,7 +69,7 @@ public class IncidentActionMenu extends Menu{
     @Override
     public String toString() {
         String output =
-                "1) Print Employee Information\n" +
+                "1) Print workerRelatedClasses.Employee.Employee Information\n" +
                 "2) Update\n" +
                 "3) Delete\n" +
                 "4) Back\n" +

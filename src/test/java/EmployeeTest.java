@@ -1,5 +1,10 @@
+import benefits.BenefitPackage;
+import benefits.concrete.BenefitSilver;
 import org.junit.Assert;
 import org.junit.Test;
+import workerRelatedClasses.department.Department;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.TimeCard;
 
 import java.util.Date;
 
@@ -71,10 +76,10 @@ public class EmployeeTest {
 //    public void incidentTest(){
 //        Date now = new Date();
 //        String expected = "employee seduction";
-//        ArrayList<Employee> involved = new ArrayList<Employee>();
+//        ArrayList<workerRelatedClasses.Employee.Employee> involved = new ArrayList<workerRelatedClasses.Employee.Employee>();
 //        involved.add(employee1);
 //        involved.add(employee2);
-//        Incident incident = new Incident(now,expected,involved);
+//        workerRelatedClasses.incidents.Incident incident = new workerRelatedClasses.incidents.Incident(now,expected,involved);
 //
 //        String actual = incident.getDescription();
 //
@@ -91,7 +96,7 @@ public class EmployeeTest {
 
         int expected = 15;
 
-        int actual = employee1.getBenefitPackage().paidTimeOffInDays;
+        int actual = employee1.getBenefitPackage().getPaidTimeOffInDays();
 
         System.out.println(employee1.getBenefitPackage().printHealthInsurance());
 

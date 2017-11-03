@@ -1,3 +1,7 @@
+package workerRelatedClasses.Employee;
+
+import benefits.BenefitPackage;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -8,10 +12,10 @@ public class Employee extends Person {
     private double Salary;
     private boolean isSalary;
     private ArrayList <TimeCard> timeCardList = new ArrayList <TimeCard>();
-    //    private ArrayList<Incident> incidents;
+    //    private ArrayList<workerRelatedClasses.incidents.Incident> incidents;
     private BenefitPackage benefitPackage;
 
-    Employee(String firstName, String lastName, String phoneNumber, String address) {
+    public Employee(String firstName, String lastName, String phoneNumber, String address) {
         super(firstName, lastName, phoneNumber, address);
     }
 
@@ -64,11 +68,11 @@ public class Employee extends Person {
         this.benefitPackage = benefitPackage;
     }
 
-    //    public ArrayList<Incident> getIncidents() {
+    //    public ArrayList<workerRelatedClasses.incidents.Incident> getIncidents() {
 //        return incidents;
 //    }
 //
-//    public void addIncident(Incident incident) {
+//    public void addIncident(workerRelatedClasses.incidents.Incident incident) {
 //        this.incidents.add(incident);
 //    }
     public void clockIn() {
@@ -95,11 +99,11 @@ public class Employee extends Person {
     @Override
     public String toString() {
         String output =
-                "\nEmployee ID: " + super.getId() +
+                "\nworkerRelatedClasses.Employee.Employee ID: " + super.getId() +
                 "\nName: " + super.getFirstName() + " " + super.getLastName() +
                 "\nPhone Number: " + super.getPhoneNumber() +
                 "\nAddress: " + super.getAddress() +
-                "\nDepartment: " + this.getDepartment() +
+                "\nworkerRelatedClasses.department.Department: " + this.getDepartment() +
                 "\nPosition: " + this.getPosition() +
                 "\nSalary: " + this.getSalary() +
                 "\nBenefit Package: " + this.getBenefitPackage() + "\n";

@@ -1,3 +1,7 @@
+package utilities;
+
+import menu.Menu;
+
 import java.util.Scanner;
 
 public class Console {

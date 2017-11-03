@@ -1,3 +1,8 @@
+package menu;
+
+
+import utilities.Console;
+
 public abstract class Menu {
     private Enum[] menuEnum;
 
@@ -25,7 +30,7 @@ public abstract class Menu {
         this.menuTitle();
         Console.print(this.toString());
 //        for (Enum e: menuEnum) {
-//            Console.print(e.name());
+//            utilities.Console.print(e.name());
 //        }
         return Console.getString("");
     }

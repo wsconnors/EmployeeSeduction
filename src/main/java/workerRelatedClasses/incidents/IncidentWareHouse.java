@@ -1,3 +1,5 @@
+package workerRelatedClasses.incidents;
+
 import java.util.ArrayList;
 
 public class IncidentWareHouse {
