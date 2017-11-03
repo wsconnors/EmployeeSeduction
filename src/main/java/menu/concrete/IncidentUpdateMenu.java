@@ -93,10 +93,13 @@ public class IncidentUpdateMenu extends Menu {
         }
 
         this.incident.getEmployeesInvolved().removeAll(employeesInvolved);
+        IncidentUpdateMenu.INSTANCE.display();
     }
 
     public void updateIncidentDescription() {
+
         this.incident.setDescription(Console.getString("Enter new description: "));
+        IncidentUpdateMenu.INSTANCE.display();
     }
 
     public void updateIncidentDate() {
