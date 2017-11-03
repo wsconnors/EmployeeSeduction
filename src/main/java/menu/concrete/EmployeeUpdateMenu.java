@@ -146,7 +146,7 @@ public class EmployeeUpdateMenu extends Menu {
     public void updateDepartment() {
         Console.print("Employee's current department: " + selectedEmployee.getDepartment());
         String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
-        
+
         switch (Department.valueOf(input.toUpperCase())) {
             case MANAGEMENT:
                 this.selectedEmployee.setDepartment(Department.MANAGEMENT);
