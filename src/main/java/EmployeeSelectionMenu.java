@@ -12,6 +12,21 @@ public class EmployeeSelectionMenu extends Menu{
     }
 
     @Override
+    public void menuTitle() {
+        Console.print(
+                "  ______                 _                          _____      _           _   _             \n" +
+                " |  ____|               | |                        / ____|    | |         | | (_)            \n" +
+                " | |__   _ __ ___  _ __ | | ___  _   _  ___  ___  | (___   ___| | ___  ___| |_ _  ___  _ __  \n" +
+                " |  __| | '_ ` _ \\| '_ \\| |/ _ \\| | | |/ _ \\/ _ \\  \\___ \\ / _ \\ |/ _ \\/ __| __| |/ _ \\| '_ \\ \n" +
+                " | |____| | | | | | |_) | | (_) | |_| |  __/  __/  ____) |  __/ |  __/ (__| |_| | (_) | | | |\n" +
+                " |______|_| |_| |_| .__/|_|\\___/ \\__, |\\___|\\___| |_____/ \\___|_|\\___|\\___|\\__|_|\\___/|_| |_|\n" +
+                "                  | |             __/ |                                                      \n" +
+                "                  |_|            |___/                                                       ");
+        Console.print("" +
+                "========================================================================================================");
+    }
+
+    @Override
     public void userMenuSelection(String input) {
         switch (employeeSelectionEnum.valueOf(input)) {
             case FIND_BY_ID:
@@ -64,6 +79,16 @@ public class EmployeeSelectionMenu extends Menu{
             }
         }
         return aEmployee;
+    }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) Find By Id\n" +
+                "2) Find By Last Name\n" +
+                "3) Back\n" +
+                "4) Quit\n";
+        return output;
     }
 }
 

@@ -10,6 +10,20 @@ public class IncidentsMenu extends Menu{
     }
 
     @Override
+    public void menuTitle() {
+        Console.print("  _____            _     _            _       \n" +
+                " |_   _|          (_)   | |          | |      \n" +
+                "   | |  _ __   ___ _  __| | ___ _ __ | |_ ___ \n" +
+                "   | | | '_ \\ / __| |/ _` |/ _ \\ '_ \\| __/ __|\n" +
+                "  _| |_| | | | (__| | (_| |  __/ | | | |_\\__ \\\n" +
+                " |_____|_| |_|\\___|_|\\__,_|\\___|_| |_|\\__|___/\n" +
+                "                                              \n" +
+                "                                              ");
+        Console.print("" +
+                "======================================================");
+    }
+
+    @Override
     public void userMenuSelection(String input) {
 
         switch (employeeUpdateEnums.valueOf(input)){
@@ -61,6 +75,16 @@ public class IncidentsMenu extends Menu{
         }
         IncidentActionMenu.INSTANCE.setIncident(aIncident);
         IncidentActionMenu.INSTANCE.display();
+    }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) Create\n" +
+                "2) Find\n" +
+                "3) Back\n" +
+                "4) Quit\n";
+        return output;
     }
 }
 
