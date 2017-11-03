@@ -7,6 +7,8 @@ import utilities.YesNoException;
 import workerRelatedClasses.Employee.Employee;
 import workerRelatedClasses.Employee.EmployeeWareHouse;
 
+import java.util.InputMismatchException;
+
 
 public class EmployeeDirectoryMenu extends Menu {
 
@@ -57,8 +59,20 @@ public class EmployeeDirectoryMenu extends Menu {
     }
 
     private void askForSalary(Employee aNewEmployee) {
-        double newEmployeeSalary = Console.getDouble(
-                "Please enter the salary of the new employee?");
+        double newEmployeeSalary = 0;
+
+        do {
+            try {
+                newEmployeeSalary = Console.getDouble(
+                        "Please enter the salary of the new employee: ");
+                 break;
+            } catch (InputMismatchException e) {
+
+                Console.print("INVALID INPUT ( ° ͜ʖ͡°)╭∩╮");
+                continue;
+            }
+        } while(true);
+
         aNewEmployee.setSalary(newEmployeeSalary);
     }
 
@@ -68,8 +82,11 @@ public class EmployeeDirectoryMenu extends Menu {
         if ("Salary".equalsIgnoreCase(newIsEmployeeSalaryOrWage)) {
             aNewEmployee.setIsSalary(true);
         }
-        else {
+        else if ("Hourly".equalsIgnoreCase(newIsEmployeeSalaryOrWage)) {
             aNewEmployee.setIsSalary(false);
+        }
+        else {
+            askForSalaryOrHourly(aNewEmployee);
         }
     }
 
@@ -80,7 +97,7 @@ public class EmployeeDirectoryMenu extends Menu {
     }
 
     private void askForPosition(Employee aNewEmployee) {
-        String newEmployeePosition = Console.getString("Please enter the address of the new employee.");
+        String newEmployeePosition = Console.getString("Please enter the position of the new employee.");
         aNewEmployee.setPosition(newEmployeePosition);
     }
 
@@ -106,10 +123,12 @@ public class EmployeeDirectoryMenu extends Menu {
         Employee aNewEmployee = new Employee(newEmployeeFirstName,
                 newEmployeeLastName, newEmployeePhoneNumber, newEmployeeAddress);
 
-        askForMoreEmployeeDetails(aNewEmployee);
+        aNewEmployee = askForMoreEmployeeDetails(aNewEmployee);
 
         Console.print(aNewEmployee.toString());
+
         EmployeeWareHouse.addEmployee(aNewEmployee);
+        EmployeeDirectoryMenu.INSTANCE.display();
 
     }
 
