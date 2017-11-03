@@ -156,10 +156,10 @@ public class EmployeeUpdateMenu extends Menu {
   
     private String printIsSalary(){
         if(selectedEmployee.getIsSalary()){
-            return "Salary";
+            return "Is currently Salary.";
         }
         else{
-            return "Hourly";
+            return "Is currently Hourly";
         }
     }
 
