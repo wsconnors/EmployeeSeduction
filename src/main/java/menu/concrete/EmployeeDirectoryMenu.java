@@ -1,4 +1,15 @@
+package menu.concrete;
+
+import benefits.concrete.BenefitSilver;
+import menu.Menu;
+import utilities.Console;
+import utilities.YesNoException;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
+
+
 public class EmployeeDirectoryMenu extends Menu {
+
     public static final EmployeeDirectoryMenu INSTANCE = new EmployeeDirectoryMenu();
 
     enum employeeDirectoryMenu {
@@ -54,10 +65,7 @@ public class EmployeeDirectoryMenu extends Menu {
 
         Employee aNewEmployee = new Employee(newEmployeeFirstName,
                 newEmployeeLastName, newEmployeePhoneNumber, newEmployeeAddress);
-
-        String addMoreInfo = Console.getString(
-                "Would you like to add Salary, Benefits, Department, " +
-                "and Position to this employee? 'Yes' or 'No'");
+        String addMoreInfo = Console.checkYesOrNo();
 
         if ("Yes".equalsIgnoreCase(addMoreInfo)) {
             double newEmployeeSalary = Console.getDouble("Please enter the salary of the new employee?");

@@ -1,3 +1,13 @@
+package menu.concrete;
+
+import benefits.concrete.BenefitGold;
+import benefits.concrete.BenefitPlat;
+import benefits.concrete.BenefitSilver;
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.department.Department;
+import workerRelatedClasses.Employee.Employee;
+
 public class EmployeeUpdateMenu extends Menu {
     public static final EmployeeUpdateMenu INSTANCE = new EmployeeUpdateMenu();
 
@@ -115,7 +125,7 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     public void updateBenefits() {
-        Console.print("Employee's current benefits package: " + selectedEmployee.getBenefitPackage().printName());
+        Console.print("Employee's current benefits package: " + selectedEmployee.getBenefitPackage().getName());
         String input = Console.getString("Enter new benefits package(SILVER/GOLD/PLATINUM): ");
 
         if ("silver".equalsIgnoreCase(input)) {
@@ -133,6 +143,7 @@ public class EmployeeUpdateMenu extends Menu {
     public void updateDepartment() {
         Console.print("Employee's current department: " + selectedEmployee.getDepartment());
         String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
+
 
         switch (Department.valueOf(input)) {
             case MANAGEMENT:

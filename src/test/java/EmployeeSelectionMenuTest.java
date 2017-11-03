@@ -1,7 +1,10 @@
+import menu.concrete.EmployeeSelectionMenu;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
 
 public class EmployeeSelectionMenuTest {
     @Before

@@ -1,4 +1,8 @@
-public class BenefitSilver extends BenefitPackage{
+package benefits.concrete;
+
+import benefits.BenefitPackage;
+
+public class BenefitSilver extends BenefitPackage {
 
     //lowest benefit package
 

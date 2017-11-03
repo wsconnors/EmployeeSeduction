@@ -1,3 +1,8 @@
+package workerRelatedClasses.Employee;
+
+import benefits.BenefitPackage;
+import benefits.concrete.BenefitSilver;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,11 +12,14 @@ public class Employee extends Person {
     private Enum department;
     private double Salary;
     private boolean isSalary;
-    private ArrayList <TimeCard> timeCardList = new ArrayList <TimeCard>();
-    //    private ArrayList<Incident> incidents;
-    private BenefitPackage benefitPackage;
 
-    Employee(String firstName, String lastName, String phoneNumber, String address) {
+    private ArrayList <TimeCard> timeCardList = new ArrayList <TimeCard>();
+    //    private ArrayList<workerRelatedClasses.incidents.Incident> incidents;
+    private BenefitPackage benefitPackage = new BenefitSilver();
+
+
+
+    public Employee(String firstName, String lastName, String phoneNumber, String address) {
         super(firstName, lastName, phoneNumber, address);
     }
 
@@ -64,11 +72,11 @@ public class Employee extends Person {
         this.benefitPackage = benefitPackage;
     }
 
-    //    public ArrayList<Incident> getIncidents() {
+    //    public ArrayList<workerRelatedClasses.incidents.Incident> getIncidents() {
 //        return incidents;
 //    }
 //
-//    public void addIncident(Incident incident) {
+//    public void addIncident(workerRelatedClasses.incidents.Incident incident) {
 //        this.incidents.add(incident);
 //    }
     public void clockIn() {

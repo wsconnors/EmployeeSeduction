@@ -1,6 +1,14 @@
+package menu.concrete;
+
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
+import workerRelatedClasses.incidents.Incident;
+
 import java.util.ArrayList;
 
-public class IncidentUpdateMenu extends Menu{
+public class IncidentUpdateMenu extends Menu {
     public static final IncidentUpdateMenu INSTANCE = new IncidentUpdateMenu();
 
     public enum updateIncidentEnum {ADD_EMPLOYEE_INVOLVED, DELETE_EMPLOYEE_INVOLVED, DESCRIPTION, DATE, ID, BACK, QUIT}

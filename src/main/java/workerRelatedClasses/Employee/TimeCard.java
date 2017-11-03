@@ -1,10 +1,12 @@
+package workerRelatedClasses.Employee;
+
 import java.util.Date;
 
 public class TimeCard {
     private Date clockIn;
     private Date clockOut;
 
-    TimeCard(Date clockIn){
+    public TimeCard(Date clockIn){
         this.clockIn = clockIn;
     }
 

@@ -1,3 +1,5 @@
+package benefits;
+
 public abstract class BenefitPackage {
 
 
@@ -13,7 +15,21 @@ public abstract class BenefitPackage {
 
     }
 
+    public boolean isHealthInsurance() {
+        return healthInsurance;
+    }
 
+    public boolean isRetirementPlan() {
+        return retirementPlan;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPaidTimeOffInDays() {
+        return paidTimeOffInDays;
+    }
 
     public String printPaidTimeOffInDays() {
         String days = "PTO Days: " + paidTimeOffInDays;
@@ -29,12 +45,7 @@ public abstract class BenefitPackage {
         String hasRetirementPlan = "Has Retirement Plan: " + retirementPlan;
         return hasRetirementPlan;
     }
-
-    public String printName(){
-        return name;
-    }
 }
-
 
 
 

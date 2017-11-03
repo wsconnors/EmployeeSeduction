@@ -1,3 +1,7 @@
+package benefits.concrete;
+
+import benefits.BenefitPackage;
+
 public class BenefitPlat extends BenefitPackage {
 
     //highest benefit package

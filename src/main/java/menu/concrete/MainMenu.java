@@ -1,4 +1,9 @@
-public class MainMenu extends Menu{
+package menu.concrete;
+
+import menu.Menu;
+import utilities.Console;
+
+public class MainMenu extends Menu {
     public static final MainMenu INSTANCE = new MainMenu();
 
      public enum mainMenuEnum {

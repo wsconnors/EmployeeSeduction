@@ -1,4 +1,10 @@
-public class IncidentActionMenu extends Menu{
+package menu.concrete;
+
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.incidents.Incident;
+
+public class IncidentActionMenu extends Menu {
     public static final IncidentActionMenu INSTANCE = new IncidentActionMenu();
 
     private Incident incident;

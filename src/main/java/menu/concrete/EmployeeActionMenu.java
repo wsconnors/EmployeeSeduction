@@ -1,3 +1,10 @@
+package menu.concrete;
+
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
+
 public class EmployeeActionMenu extends Menu {
     public static final EmployeeActionMenu INSTANCE = new EmployeeActionMenu();
     private Employee selectedEmployee;
