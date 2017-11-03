@@ -18,10 +18,15 @@ public abstract class Menu {
     }
 
     public String getInput() {
+        Console.print("====================================================");
+        //Console.print(this.toString());
         for (Enum e: menuEnum) {
             Console.print(e.name());
         }
         return Console.getString("");
     }
+
+
+
 }
 
