@@ -1,4 +1,15 @@
+package menu.concrete;
+
+import benefits.concrete.BenefitSilver;
+import menu.MainMenu;
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
+
+
 public class EmployeeDirectoryMenu extends Menu {
+
     public static final EmployeeDirectoryMenu INSTANCE = new EmployeeDirectoryMenu();
 
     enum employeeDirectoryMenu {
@@ -56,7 +67,7 @@ public class EmployeeDirectoryMenu extends Menu {
                 newEmployeeLastName, newEmployeePhoneNumber, newEmployeeAddress);
 
         String addMoreInfo = Console.getString(
-                "Would you like to add Salary, Benefits, Department, " +
+                "Would you like to add Salary, Benefits, workerRelatedClasses.department.Department, " +
                 "and Position to this employee? 'Yes' or 'No'");
 
         if ("Yes".equalsIgnoreCase(addMoreInfo)) {
@@ -87,8 +98,8 @@ public class EmployeeDirectoryMenu extends Menu {
     @Override
     public String toString() {
         String enumStrings =
-                "1) Create Employee\n" +
-                "2) Find Employee\n" +
+                "1) Create workerRelatedClasses.Employee.Employee\n" +
+                "2) Find workerRelatedClasses.Employee.Employee\n" +
                 "3) Back\n" +
                 "4) Quit";
         return enumStrings;

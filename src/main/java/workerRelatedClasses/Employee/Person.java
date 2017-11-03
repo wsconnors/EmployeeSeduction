@@ -1,3 +1,6 @@
+package workerRelatedClasses.Employee;
+
+
 public class Person {
     private int id =  Integer.parseInt(String.format("%04d",(int)Math.floor(Math.random()*1000)));
     private String firstName;

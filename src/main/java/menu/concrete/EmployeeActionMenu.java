@@ -1,3 +1,10 @@
+package menu.concrete;
+
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
+
 public class EmployeeActionMenu extends Menu {
     public static final EmployeeActionMenu INSTANCE = new EmployeeActionMenu();
     private Employee selectedEmployee;
@@ -60,7 +67,7 @@ public class EmployeeActionMenu extends Menu {
     private void delete() {
         EmployeeWareHouse.removeEmployee(this.selectedEmployee);
         Console.print("\n"+this.selectedEmployee.toString());
-        Console.print("Employee has been deleted.\n( ° ͜ʖ͡°)╭∩╮\n");
+        Console.print("workerRelatedClasses.Employee.Employee has been deleted.\n( ° ͜ʖ͡°)╭∩╮\n");
         EmployeeDirectoryMenu.INSTANCE.display();
     }
 
@@ -68,7 +75,7 @@ public class EmployeeActionMenu extends Menu {
     public String toString() {
         String output =
                 "1) Update\n" +
-                "2) Print Employee Information\n" +
+                "2) Print workerRelatedClasses.Employee.Employee Information\n" +
                 "3) Delete\n" +
                 "4) Back";
 

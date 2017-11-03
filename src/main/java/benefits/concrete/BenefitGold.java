@@ -1,4 +1,8 @@
-public class BenefitGold extends BenefitPackage{
+package benefits.concrete;
+
+import benefits.BenefitPackage;
+
+public class BenefitGold extends BenefitPackage {
 
     //mid benefit package
 

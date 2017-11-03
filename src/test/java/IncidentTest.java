@@ -1,9 +1,9 @@
 import org.junit.Assert;
 import org.junit.Test;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.incidents.Incident;
 
 import java.util.ArrayList;
-
-import static org.junit.Assert.*;
 
 public class IncidentTest {
 
@@ -98,7 +98,7 @@ public class IncidentTest {
 
     @Test
     public void toStringTest(){
-        String expected = "Incident Number: 2\n" +
+        String expected = "workerRelatedClasses.incidents.Incident Number: 2\n" +
                 "Employees involved :\n" +
                 "\tName: John Jones ID: 256\n" +
                 "\tName: Ricky Smith ID: 157\n" +

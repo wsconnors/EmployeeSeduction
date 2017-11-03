@@ -1,3 +1,4 @@
+import benefits.concrete.BenefitGold;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class BenefitGoldTest {
     @Test
     public void paidTimeOffInDaysTest() {
         int expected = 20;
-        int actual = benefitGoldTestObj.paidTimeOffInDays;
+        int actual = benefitGoldTestObj.getPaidTimeOffInDays();
 
         Assert.assertEquals(expected, actual);
     }
@@ -24,7 +25,7 @@ public class BenefitGoldTest {
     @Test
     public void healthInsuranceTest() {
         boolean expected = true;
-        boolean actual = benefitGoldTestObj.healthInsurance;
+        boolean actual = benefitGoldTestObj.isHealthInsurance();
 
         Assert.assertEquals(expected, actual);
     }
@@ -32,7 +33,7 @@ public class BenefitGoldTest {
     @Test
     public void retirementPlanTest() {
         boolean expected = false;
-        boolean actual = benefitGoldTestObj.retirementPlan;
+        boolean actual = benefitGoldTestObj.isRetirementPlan();
 
         Assert.assertEquals(expected, actual);
     }

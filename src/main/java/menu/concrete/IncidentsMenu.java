@@ -1,6 +1,16 @@
+package menu.concrete;
+
+import menu.MainMenu;
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
+import workerRelatedClasses.incidents.Incident;
+import workerRelatedClasses.incidents.IncidentWareHouse;
+
 import java.util.ArrayList;
 
-public class IncidentsMenu extends Menu{
+public class IncidentsMenu extends Menu {
     public static final IncidentsMenu INSTANCE = new IncidentsMenu();
 
     public enum employeeUpdateEnums {CREATE, FIND, BACK, QUIT};
@@ -50,7 +60,7 @@ public class IncidentsMenu extends Menu{
             int idInvolved = Console.getInt("Enter ID of employee involved: ");
             Employee employeeInvolved = EmployeeWareHouse.getEmployeeById(idInvolved);
             if(employeeInvolved == null){
-                System.out.println("Employee does not exist.");
+                System.out.println("workerRelatedClasses.Employee.Employee does not exist.");
                 continue;
             }
             employeesInvolved.add(employeeInvolved);
@@ -70,7 +80,7 @@ public class IncidentsMenu extends Menu{
         int ID = Console.getInt("Enter incident ID number: ");
         Incident aIncident = IncidentWareHouse.getIncidentById(ID);
         if(aIncident == null){
-            Console.print("Incident does not exist.\n");
+            Console.print("workerRelatedClasses.incidents.Incident does not exist.\n");
             IncidentsMenu.INSTANCE.display();
         }
         IncidentActionMenu.INSTANCE.setIncident(aIncident);

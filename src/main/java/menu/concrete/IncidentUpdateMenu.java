@@ -1,6 +1,14 @@
+package menu.concrete;
+
+import menu.Menu;
+import utilities.Console;
+import workerRelatedClasses.Employee.Employee;
+import workerRelatedClasses.Employee.EmployeeWareHouse;
+import workerRelatedClasses.incidents.Incident;
+
 import java.util.ArrayList;
 
-public class IncidentUpdateMenu extends Menu{
+public class IncidentUpdateMenu extends Menu {
     public static final IncidentUpdateMenu INSTANCE = new IncidentUpdateMenu();
 
     public enum updateIncidentEnum {ADD_EMPLOYEE_INVOLVED, DELETE_EMPLOYEE_INVOLVED, DESCRIPTION, DATE, ID, BACK, QUIT}
@@ -99,8 +107,8 @@ public class IncidentUpdateMenu extends Menu{
     @Override
     public String toString() {
         String output =
-                "1) Add Employee Involved\n" +
-                "2) Remove Employee Involved\n" +
+                "1) Add workerRelatedClasses.Employee.Employee Involved\n" +
+                "2) Remove workerRelatedClasses.Employee.Employee Involved\n" +
                 "3) Edit Description\n" +
                 "4) Edit Date\n" +
                 "5) Edit Id\n" +
