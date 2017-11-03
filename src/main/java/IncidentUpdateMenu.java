@@ -20,6 +20,21 @@ public class IncidentUpdateMenu extends Menu{
     }
 
     @Override
+    public void menuTitle() {
+        Console.print(
+                "  _____            _     _            _     _    _           _       _        \n" +
+                " |_   _|          (_)   | |          | |   | |  | |         | |     | |       \n" +
+                "   | |  _ __   ___ _  __| | ___ _ __ | |_  | |  | |_ __   __| | __ _| |_ ___  \n" +
+                "   | | | '_ \\ / __| |/ _` |/ _ \\ '_ \\| __| | |  | | '_ \\ / _` |/ _` | __/ _ \\ \n" +
+                "  _| |_| | | | (__| | (_| |  __/ | | | |_  | |__| | |_) | (_| | (_| | ||  __/ \n" +
+                " |_____|_| |_|\\___|_|\\__,_|\\___|_| |_|\\__|  \\____/| .__/ \\__,_|\\__,_|\\__\\___| \n" +
+                "                                                  | |                         \n" +
+                "                                                  |_|                         ");
+        Console.print("========================================================================================");
+
+    }
+
+    @Override
     public void userMenuSelection(String input) {
 
         switch (IncidentUpdateMenu.updateIncidentEnum.valueOf(input)){
@@ -79,5 +94,18 @@ public class IncidentUpdateMenu extends Menu{
     public void updateIncidentDate() {
         this.incident.setDate(Console.getString("Enter new date: "));
         Console.goBack(IncidentsMenu.INSTANCE);
+    }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) Add Employee Involved\n" +
+                "2) Remove Employee Involved\n" +
+                "3) Edit Description\n" +
+                "4) Edit Date\n" +
+                "5) Edit Id\n" +
+                "6) Back\n" +
+                "7) Quit\n";
+        return output;
     }
 }

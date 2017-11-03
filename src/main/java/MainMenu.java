@@ -2,20 +2,20 @@ public class MainMenu extends Menu{
     public static final MainMenu INSTANCE = new MainMenu();
 
      public enum mainMenuEnum {
-         EMPLOYEE_DIRECTORY(1),
-         INCIDENT_REPORTS(2),
-         QUIT(3);
-
-         private int value;
-
-         mainMenuEnum(int num) {this.value = num;}
-         public int getNum() {return value;}
-
+         EMPLOYEE_DIRECTORY,
+         INCIDENT_REPORTS,
+         QUIT
      }
 
     public MainMenu() {
         super(mainMenuEnum.values());
-        Console.print("  __  __       _         __  __                  \n" +
+
+    }
+
+    @Override
+    public void menuTitle() {
+        Console.print(
+                "  __  __       _         __  __                  \n" +
                 " |  \\/  |     (_)       |  \\/  |                 \n" +
                 " | \\  / | __ _ _ _ __   | \\  / | ___ _ __  _   _ \n" +
                 " | |\\/| |/ _` | | '_ \\  | |\\/| |/ _ \\ '_ \\| | | |\n" +
@@ -23,10 +23,13 @@ public class MainMenu extends Menu{
                 " |_|  |_|\\__,_|_|_| |_| |_|  |_|\\___|_| |_|\\__,_|\n" +
                 "                                                 \n" +
                 "                                                 ");
+        Console.print(
+                "========================================================");
     }
 
     @Override
     public void userMenuSelection(String input) {
+
         switch (mainMenuEnum.valueOf(input)){
             case EMPLOYEE_DIRECTORY:
                 employeeDirectory();
@@ -38,7 +41,7 @@ public class MainMenu extends Menu{
 
             case QUIT:
                 Console.quitHRApp();
-            }
+        }
     }
 
     private void incidentReports() {
