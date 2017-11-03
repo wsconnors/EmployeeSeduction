@@ -3,6 +3,7 @@ public abstract class BenefitPackage {
 
     protected boolean healthInsurance = false;
     protected boolean retirementPlan = false;
+    protected String name;
 
     //default 3 weeks PTO
     protected int paidTimeOffInDays = 15;
@@ -27,6 +28,10 @@ public abstract class BenefitPackage {
     public String printRetirementPlan() {
         String hasRetirementPlan = "Has Retirement Plan: " + retirementPlan;
         return hasRetirementPlan;
+    }
+
+    public String printName(){
+        return name;
     }
 }
 
