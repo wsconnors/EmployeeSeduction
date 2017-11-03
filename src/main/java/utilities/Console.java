@@ -37,7 +37,6 @@ public class Console {
         aMenu.display();
     }
 
-<<<<<<< HEAD
     public static String checkYesOrNo() {
         String addMoreInfo;
         do {
@@ -52,8 +51,6 @@ public class Console {
         } while (!("Yes".equalsIgnoreCase(addMoreInfo) || "No".equalsIgnoreCase(addMoreInfo)));
         return addMoreInfo;
     }
-=======
 
->>>>>>> e5e7d4ed5c02b96013f1ee6f8bea02ce97a20b0c
 }
 

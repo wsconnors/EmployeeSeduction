@@ -15,18 +15,13 @@ public class IncidentWareHouseTest {
 
 
 
-
-
-
-
-
     @Test
     public void addIncidentTest() {
 
         IncidentWareHouse.addIncident(testIncident);
 
-        int expected = 1;
-        int actual = testIncident.getId();
+        String expected = "fight";
+        String actual = testIncident.getDescription();
 
         Assert.assertEquals(expected,actual);
     }
@@ -50,23 +45,13 @@ public class IncidentWareHouseTest {
         IncidentWareHouse.addIncident(testIncident);
         ArrayList<Incident> incidentArrayList = IncidentWareHouse.getIncidents();
 
-        int expected = incidentArrayList.get(0).getId();
-        int actual = IncidentWareHouse.getIncidentById(1).getId();
+        String expected = incidentArrayList.get(0).getDescription();
+        int incidentId = testIncident.getId();
+
+        String actual = IncidentWareHouse.getIncidentById(incidentId).getDescription();
 
         Assert.assertEquals(expected,actual);
     }
 
-//    @Test
-//    public void getIncidentByEmployeeTest() {
-//        employeesInvolvedTest.add(testEmployeeOne);
-//        ArrayList<workerRelatedClasses.incidents.Incident> incidentArrayList = workerRelatedClasses.incidents.IncidentWareHouse.getIncidents();
-//
-//
-//        int expected = 1;
-//        int actual = workerRelatedClasses.incidents.IncidentWareHouse.getIncidentByEmployee(testEmployeeOne).getId();
-//
-//        Assert.assertEquals(expected,actual);
-//
-//    }
 
 }
