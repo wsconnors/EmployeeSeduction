@@ -42,7 +42,7 @@ public class IncidentActionMenu extends Menu{
         IncidentUpdateMenu.INSTANCE.setIncident(this.incident);
     }
     public void printIncident() {
-        this.incident.toString();
+        System.out.println(this.incident.toString());
     }
 }
 
