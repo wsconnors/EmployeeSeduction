@@ -14,11 +14,19 @@ public abstract class Menu {
 
     public void display() {
         String userInput;
+        boolean tryCatch = true;
 
         do {
-            userInput = this.getInput().toUpperCase();
-            userMenuSelection(convertEnumsToNums(userInput));
-        }while (!"quit".equalsIgnoreCase(userInput));
+            try {
+                do {
+                    userInput = this.getInput().toUpperCase();
+                    userMenuSelection(convertEnumsToNums(userInput));
+                } while (!"quit".equalsIgnoreCase(userInput));
+            } catch (IllegalArgumentException|ArrayIndexOutOfBoundsException e) {
+                Console.print("\nINVALID INPUT!!! Please enter a valid menu option.");
+                tryCatch = false;
+            }
+        }while (!tryCatch);
     }
 
     public String convertEnumsToNums(String menuNum) {

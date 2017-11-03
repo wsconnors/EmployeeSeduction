@@ -64,7 +64,7 @@ public class EmployeeDirectoryMenu extends Menu {
 
         Employee aNewEmployee = new Employee(newEmployeeFirstName,
                 newEmployeeLastName, newEmployeePhoneNumber, newEmployeeAddress);
-
+        
         String addMoreInfo = Console.getString(
                 "Would you like to add Salary, Benefits, workerRelatedClasses.department.Department, " +
                 "and Position to this employee? 'Yes' or 'No'");
