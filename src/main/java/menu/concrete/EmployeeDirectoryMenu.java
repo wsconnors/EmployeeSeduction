@@ -1,11 +1,13 @@
 package menu.concrete;
 
 import benefits.concrete.BenefitSilver;
+import com.sun.tools.javac.code.Attribute;
 import menu.Menu;
 import utilities.Console;
 import utilities.YesNoException;
 import workerRelatedClasses.Employee.Employee;
 import workerRelatedClasses.Employee.EmployeeWareHouse;
+import workerRelatedClasses.department.Department;
 
 import java.util.InputMismatchException;
 
@@ -17,6 +19,7 @@ public class EmployeeDirectoryMenu extends Menu {
     enum employeeDirectoryMenu {
         CREATE_EMPLOYEE,
         FIND_EMPLOYEE,
+        PRINT_EMPLOYEES_BY_DEPARTMENT,
         BACK,
         QUIT
     }
@@ -49,6 +52,9 @@ public class EmployeeDirectoryMenu extends Menu {
             case FIND_EMPLOYEE:
                 employeeSelection();
                 break;
+            case PRINT_EMPLOYEES_BY_DEPARTMENT:
+                printEmployeesByDepartment();
+                break;
             case BACK:
                 Console.goBack(MainMenu.INSTANCE);
                 break;
@@ -56,6 +62,15 @@ public class EmployeeDirectoryMenu extends Menu {
                 Console.quitHRApp();
                 break;
         }
+    }
+
+    private void printEmployeesByDepartment(){
+        String output = "";
+        String input = Console.getString("What department?");
+        for(Employee employee : EmployeeWareHouse.getEmployeeList()){
+            if(input.equalsIgnoreCase((String)employee.getDepartment()))
+        }
+
     }
 
     private void askForSalary(Employee aNewEmployee) {
