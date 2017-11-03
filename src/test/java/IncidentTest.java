@@ -16,7 +16,7 @@ public class IncidentTest {
 
 
     Incident testIncident = new Incident(testArrayList, "fight", "11/01/2017");
-    Incident testIncidentTwo = new Incident(testArrayList, "asdf", "asdfasdf");
+    Incident testIncidentTwo = new Incident(testArrayList, "employee seduction", "yesterday");
 
 
     @Test
@@ -32,6 +32,8 @@ public class IncidentTest {
 
     @Test
     public void setEmployeesInvolved() {
+        testArrayListTwo.add(testEmployeeOne);
+        testArrayListTwo.add(testEmployeeTwo);
 
 
         testIncident.setEmployeesInvolved(testArrayListTwo);
@@ -60,6 +62,7 @@ public class IncidentTest {
         testIncident.setDescription("blahblahblah");
 
         String expected = "blahblahblah";
+
         String actual = testIncident.getDescription();
 
         Assert.assertEquals(expected, actual);
@@ -97,10 +100,10 @@ public class IncidentTest {
     public void toStringTest(){
         String expected = "Incident Number: 2\n" +
                 "Employees involved :\n" +
-                "\tName: John Jones ID: 1\n" +
-                "\tName: Ricky Smith ID: 2\n" +
-                "Description: asdf\n" +
-                "Date: asdfasdf";
+                "\tName: John Jones ID: 256\n" +
+                "\tName: Ricky Smith ID: 157\n" +
+                "Description: employee seduction\n" +
+                "Date: yesterday";
         testArrayList.add(testEmployeeOne);
         testArrayList.add(testEmployeeTwo);
 
