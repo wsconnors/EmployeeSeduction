@@ -139,26 +139,36 @@ public class EmployeeUpdateMenu extends Menu {
             this.selectedEmployee.setBenefitPackage(platinum);
         }
         else {
+            Console.print("INVALID INPUT ( ° ͜ʖ͡°)╭∩╮");
             updateBenefits();
         }
     }
 
     public void updateDepartment() {
-        Console.print("Employee's current department: " + selectedEmployee.getDepartment());
-        String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
+        loop: do {
+            Console.print("Employee's current department: " + selectedEmployee.getDepartment());
+            String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
 
-        switch (Department.valueOf(input.toUpperCase())) {
-            case MANAGEMENT:
-                this.selectedEmployee.setDepartment(Department.MANAGEMENT);
-                break;
-            case FINANCE:
-                this.selectedEmployee.setDepartment(Department.FINANCE);
-                break;
-            case LOGISTICS:
-                this.selectedEmployee.setDepartment(Department.LOGISTICS);
-                break;
-        }
+            try {
+                switch (Department.valueOf(input.toUpperCase())) {
+                    case MANAGEMENT:
+                        this.selectedEmployee.setDepartment(Department.MANAGEMENT);
+                        break loop;
+                    case FINANCE:
+                        this.selectedEmployee.setDepartment(Department.FINANCE);
+                        break loop;
+                    case LOGISTICS:
+                        this.selectedEmployee.setDepartment(Department.LOGISTICS);
+                        break loop;
+                }
+            } catch (IllegalArgumentException e) {
+                Console.print("INVALID INPUT ( ° ͜ʖ͡°)╭∩╮");
+                continue;
+            }
+
+        } while (true);
     }
+
 
     private void updatePosition() {
         Console.print("Employee's current position: " + selectedEmployee.getDepartment());

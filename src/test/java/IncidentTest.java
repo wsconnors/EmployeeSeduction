@@ -17,7 +17,7 @@ public class IncidentTest {
 
 
     Incident testIncident = new Incident(testArrayList, "fight", "11/01/2017");
-    Incident testIncidentTwo = new Incident(testArrayList, "employee seduction", "yesterday");
+   // Incident testIncidentTwo = new Incident(testArrayList, "fight", "asdfasdf");
 
 
     @Test
@@ -37,7 +37,7 @@ public class IncidentTest {
     public void setEmployeesInvolved() {
         testArrayListTwo.add(testEmployeeThree);
 
-        testIncident.setEmployeesInvolved(testArrayListTwo);
+        testIncident.setEmployeesInvolved(testArrayList);
 
         String expected = "Billy";
 
@@ -72,8 +72,10 @@ public class IncidentTest {
 
     @Test
     public void getId() {
+
         int expected = 6;
-        int actual = testIncidentTwo.getId();
+        int actual = testIncident.getId();
+
 
         Assert.assertEquals(expected, actual);
 
