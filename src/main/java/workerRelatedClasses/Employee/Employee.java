@@ -99,11 +99,11 @@ public class Employee extends Person {
     @Override
     public String toString() {
         String output =
-                "\nworkerRelatedClasses.Employee.Employee ID: " + super.getId() +
+                "\nEmployee ID: " + super.getId() +
                 "\nName: " + super.getFirstName() + " " + super.getLastName() +
                 "\nPhone Number: " + super.getPhoneNumber() +
                 "\nAddress: " + super.getAddress() +
-                "\nworkerRelatedClasses.department.Department: " + this.getDepartment() +
+                "\nDepartment: " + this.getDepartment() +
                 "\nPosition: " + this.getPosition() +
                 "\nSalary: " + this.getSalary() +
                 "\nBenefit Package: " + this.getBenefitPackage() + "\n";

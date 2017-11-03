@@ -1,7 +1,6 @@
 package menu.concrete;
 
 import benefits.concrete.BenefitSilver;
-import menu.MainMenu;
 import menu.Menu;
 import utilities.Console;
 import workerRelatedClasses.Employee.Employee;
@@ -98,8 +97,8 @@ public class EmployeeDirectoryMenu extends Menu {
     @Override
     public String toString() {
         String enumStrings =
-                "1) Create workerRelatedClasses.Employee.Employee\n" +
-                "2) Find workerRelatedClasses.Employee.Employee\n" +
+                "1) Create Employee\n" +
+                "2) Find Employee\n" +
                 "3) Back\n" +
                 "4) Quit";
         return enumStrings;

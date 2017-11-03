@@ -1,6 +1,5 @@
 package menu.concrete;
 
-import menu.MainMenu;
 import menu.Menu;
 import utilities.Console;
 import workerRelatedClasses.Employee.Employee;
@@ -60,7 +59,7 @@ public class IncidentsMenu extends Menu {
             int idInvolved = Console.getInt("Enter ID of employee involved: ");
             Employee employeeInvolved = EmployeeWareHouse.getEmployeeById(idInvolved);
             if(employeeInvolved == null){
-                System.out.println("workerRelatedClasses.Employee.Employee does not exist.");
+                System.out.println("Employee does not exist.");
                 continue;
             }
             employeesInvolved.add(employeeInvolved);

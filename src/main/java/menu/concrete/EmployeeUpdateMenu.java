@@ -87,22 +87,22 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     public void updateAddress() {
-        Console.print("workerRelatedClasses.Employee.Employee's current address: " + selectedEmployee.getAddress());
+        Console.print("Employee's current address: " + selectedEmployee.getAddress());
         this.selectedEmployee.setAddress(Console.getString("Enter new address: "));
     }
 
     public void updateLastName() {
-        Console.print("workerRelatedClasses.Employee.Employee's current last name: " + selectedEmployee.getLastName());
+        Console.print("Employee's current last name: " + selectedEmployee.getLastName());
         this.selectedEmployee.setLastName(Console.getString("Enter new last name: "));
     }
 
     public void updateFirstName() {
-        Console.print("workerRelatedClasses.Employee.Employee's current first name: " + selectedEmployee.getFirstName());
+        Console.print("Employee's current first name: " + selectedEmployee.getFirstName());
         this.selectedEmployee.setFirstName(Console.getString("Enter new first name: "));
     }
 
     private void updatePhoneNumber() {
-        Console.print("workerRelatedClasses.Employee.Employee's current phone #: " + selectedEmployee.getPhoneNumber());
+        Console.print("Employee's current phone #: " + selectedEmployee.getPhoneNumber());
         this.selectedEmployee.setPhoneNumber(Console.getString("Enter new phone number: "));
     }
 
@@ -125,7 +125,7 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     public void updateBenefits() {
-        Console.print("workerRelatedClasses.Employee.Employee's current benefits package: " + selectedEmployee.getBenefitPackage().printName());
+        Console.print("Employee's current benefits package: " + selectedEmployee.getBenefitPackage().printName());
         String input = Console.getString("Enter new benefits package(SILVER/GOLD/PLATINUM): ");
 
         if ("silver".equalsIgnoreCase(input)) {
@@ -141,7 +141,7 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     public void updateDepartment() {
-        Console.print("workerRelatedClasses.Employee.Employee's current department: " + selectedEmployee.getDepartment());
+        Console.print("Employee's current department: " + selectedEmployee.getDepartment());
         String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
 
 
@@ -161,7 +161,7 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     private void updatePosition() {
-        Console.print("workerRelatedClasses.Employee.Employee's current position: " + selectedEmployee.getDepartment());
+        Console.print("Employee's current position: " + selectedEmployee.getDepartment());
         this.selectedEmployee.setPosition(Console.getString("Enter a new position: "));
     }
   
@@ -184,7 +184,7 @@ public class EmployeeUpdateMenu extends Menu {
                 "5) Salary\n" +
                 "6) Salary or Hourly\n" +
                 "7) Benefits\n" +
-                "8) workerRelatedClasses.department.Department\n" +
+                "8) Department\n" +
                 "9) Position\n" +
                 "10) Back";
         return output;

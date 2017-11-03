@@ -62,7 +62,7 @@ public class Incident {
 
     @Override
     public String toString(){
-        String output = "workerRelatedClasses.incidents.Incident Number: " + id;
+        String output = "Incident Number: " + id;
         output += "\nEmployees involved :";
         for(Employee employee : employeesInvolved){
             output += "\n\tName: "+employee.getFirstName()+" "+employee.getLastName()+" ID: "+employee.getId();

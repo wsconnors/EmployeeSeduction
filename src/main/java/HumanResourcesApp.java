@@ -1,5 +1,5 @@
 
-import menu.MainMenu;
+import menu.concrete.MainMenu;
 
 public class HumanResourcesApp {
 

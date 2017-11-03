@@ -107,8 +107,8 @@ public class IncidentUpdateMenu extends Menu {
     @Override
     public String toString() {
         String output =
-                "1) Add workerRelatedClasses.Employee.Employee Involved\n" +
-                "2) Remove workerRelatedClasses.Employee.Employee Involved\n" +
+                "1) Add Employee Involved\n" +
+                "2) Remove Employee Involved\n" +
                 "3) Edit Description\n" +
                 "4) Edit Date\n" +
                 "5) Edit Id\n" +

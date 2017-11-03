@@ -69,7 +69,7 @@ public class IncidentActionMenu extends Menu {
     @Override
     public String toString() {
         String output =
-                "1) Print workerRelatedClasses.Employee.Employee Information\n" +
+                "1) Print Employee Information\n" +
                 "2) Update\n" +
                 "3) Delete\n" +
                 "4) Back\n" +

@@ -67,7 +67,7 @@ public class EmployeeActionMenu extends Menu {
     private void delete() {
         EmployeeWareHouse.removeEmployee(this.selectedEmployee);
         Console.print("\n"+this.selectedEmployee.toString());
-        Console.print("workerRelatedClasses.Employee.Employee has been deleted.\n( ° ͜ʖ͡°)╭∩╮\n");
+        Console.print("Employee has been deleted.\n( ° ͜ʖ͡°)╭∩╮\n");
         EmployeeDirectoryMenu.INSTANCE.display();
     }
 
@@ -75,7 +75,7 @@ public class EmployeeActionMenu extends Menu {
     public String toString() {
         String output =
                 "1) Update\n" +
-                "2) Print workerRelatedClasses.Employee.Employee Information\n" +
+                "2) Print Employee Information\n" +
                 "3) Delete\n" +
                 "4) Back";
 
