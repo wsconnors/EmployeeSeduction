@@ -56,6 +56,46 @@ public class EmployeeDirectoryMenu extends Menu {
         }
     }
 
+    private void askForSalary(Employee aNewEmployee) {
+        double newEmployeeSalary = Console.getDouble(
+                "Please enter the salary of the new employee?");
+        aNewEmployee.setSalary(newEmployeeSalary);
+    }
+
+    private void askForSalaryOrHourly(Employee aNewEmployee) {
+        String newIsEmployeeSalaryOrWage = Console.getString(
+                "Is the employee Salary or Hourly? 'Salary' or 'Hourly'");
+        if ("Salary".equalsIgnoreCase(newIsEmployeeSalaryOrWage)) {
+            aNewEmployee.setIsSalary(true);
+        }
+        else {
+            aNewEmployee.setIsSalary(false);
+        }
+    }
+
+    private void askForBenefits(Employee aNewEmployee) {
+        EmployeeUpdateMenu.INSTANCE.setSelectedEmployee(aNewEmployee);
+        EmployeeUpdateMenu.INSTANCE.updateBenefits();
+        EmployeeUpdateMenu.INSTANCE.updateDepartment();
+    }
+
+    private void askForPosition(Employee aNewEmployee) {
+        String newEmployeePosition = Console.getString("Please enter the address of the new employee.");
+        aNewEmployee.setPosition(newEmployeePosition);
+    }
+
+    private Employee askForMoreEmployeeDetails(Employee aNewEmployee) {
+        String addMoreInfo = Console.checkYesOrNo();
+
+        if ("Yes".equalsIgnoreCase(addMoreInfo)) {
+            askForSalary(aNewEmployee);
+            askForSalaryOrHourly(aNewEmployee);
+            askForBenefits(aNewEmployee);
+            askForPosition(aNewEmployee);
+        }
+        return aNewEmployee;
+    }
+
 
     private void createEmployee() {
         String newEmployeeFirstName = Console.getString("Please enter the first name of the new employee.");
@@ -65,23 +105,8 @@ public class EmployeeDirectoryMenu extends Menu {
 
         Employee aNewEmployee = new Employee(newEmployeeFirstName,
                 newEmployeeLastName, newEmployeePhoneNumber, newEmployeeAddress);
-        String addMoreInfo = Console.checkYesOrNo();
 
-        if ("Yes".equalsIgnoreCase(addMoreInfo)) {
-            double newEmployeeSalary = Console.getDouble("Please enter the salary of the new employee?");
-            aNewEmployee.setSalary(newEmployeeSalary);
-
-            String newIsEmployeeSalaryOrWage = Console.getString("Is the employee Salary or Wage? 'true' 'false'");
-            aNewEmployee.setIsSalary(Boolean.parseBoolean(newIsEmployeeSalaryOrWage));
-
-            aNewEmployee.setBenefitPackage(new BenefitSilver());
-            EmployeeUpdateMenu.INSTANCE.setSelectedEmployee(aNewEmployee);
-            EmployeeUpdateMenu.INSTANCE.updateBenefits();
-            EmployeeUpdateMenu.INSTANCE.updateDepartment();
-
-            String newEmployeePosition = Console.getString("Please enter the address of the new employee.");
-            aNewEmployee.setPosition(newEmployeePosition);
-        }
+        askForMoreEmployeeDetails(aNewEmployee);
 
         Console.print(aNewEmployee.toString());
         EmployeeWareHouse.addEmployee(aNewEmployee);
