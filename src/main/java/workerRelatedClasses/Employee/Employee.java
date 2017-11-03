@@ -110,7 +110,7 @@ public class Employee extends Person {
                 "\nDepartment: " + this.getDepartment() +
                 "\nPosition: " + this.getPosition() +
                 "\nSalary: " + this.getSalary() +
-                "\nBenefit Package: " + this.getBenefitPackage() + "\n";
+                "\nBenefit Package: " + this.getBenefitPackage().getName() + "\n";
         return output;
     }
 }
