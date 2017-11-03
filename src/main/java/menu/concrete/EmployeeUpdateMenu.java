@@ -139,12 +139,13 @@ public class EmployeeUpdateMenu extends Menu {
             this.selectedEmployee.setBenefitPackage(platinum);
         }
         else {
+            Console.print("INVALID INPUT ( ° ͜ʖ͡°)╭∩╮");
             updateBenefits();
         }
     }
 
     public void updateDepartment() {
-        do {
+        loop: do {
             Console.print("Employee's current department: " + selectedEmployee.getDepartment());
             String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
 
@@ -152,15 +153,13 @@ public class EmployeeUpdateMenu extends Menu {
                 switch (Department.valueOf(input.toUpperCase())) {
                     case MANAGEMENT:
                         this.selectedEmployee.setDepartment(Department.MANAGEMENT);
-                        break;
+                        break loop;
                     case FINANCE:
                         this.selectedEmployee.setDepartment(Department.FINANCE);
-                        break;
+                        break loop;
                     case LOGISTICS:
                         this.selectedEmployee.setDepartment(Department.LOGISTICS);
-                        break;
-                    default:
-                        continue;
+                        break loop;
                 }
             } catch (IllegalArgumentException e) {
                 Console.print("INVALID INPUT ( ° ͜ʖ͡°)╭∩╮");

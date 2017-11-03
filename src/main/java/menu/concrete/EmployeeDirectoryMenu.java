@@ -86,6 +86,7 @@ public class EmployeeDirectoryMenu extends Menu {
             aNewEmployee.setIsSalary(false);
         }
         else {
+            Console.print("INVALID INPUT ( ° ͜ʖ͡°)╭∩╮");
             askForSalaryOrHourly(aNewEmployee);
         }
     }
