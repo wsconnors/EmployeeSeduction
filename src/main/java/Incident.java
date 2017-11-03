@@ -63,7 +63,7 @@ public class Incident {
         for(Employee employee : employeesInvolved){
             output += "\n\tName: "+employee.getFirstName()+" "+employee.getLastName()+" ID: "+employee.getId();
         }
-        output += "\nDescription: " + description+ "\nDate: " + date;
+        output += "\nDescription: " + description+ "\nDate: " + date + "\n";
         return output;
     }
 }

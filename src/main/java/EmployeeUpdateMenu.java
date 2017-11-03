@@ -114,7 +114,7 @@ public class EmployeeUpdateMenu extends Menu {
         }
     }
 
-    private void updateBenefits() {
+    public void updateBenefits() {
         Console.print("Employee's current benefits package: " + selectedEmployee.getBenefitPackage().printName());
         String input = Console.getString("Enter new benefits package(SILVER/GOLD/PLATINUM): ");
 
@@ -130,19 +130,19 @@ public class EmployeeUpdateMenu extends Menu {
         }
     }
 
-    private void updateDepartment() {
+    public void updateDepartment() {
         Console.print("Employee's current department: " + selectedEmployee.getDepartment());
-        String input = Console.getString("Enter new department: ");
+        String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
 
         switch (Department.valueOf(input)) {
             case MANAGEMENT:
                 this.selectedEmployee.setDepartment(Department.MANAGEMENT);
                 break;
-            case FIANCE:
-                this.selectedEmployee.setDepartment(Department.FIANCE);
+            case FINANCE:
+                this.selectedEmployee.setDepartment(Department.FINANCE);
                 break;
             case LOGISTICS:
-                this.selectedEmployee.setDepartment(Department.FIANCE);
+                this.selectedEmployee.setDepartment(Department.LOGISTICS);
                 break;
             default:
                Console.print("!!!ERROR!!!");
