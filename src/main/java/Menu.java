@@ -7,25 +7,33 @@ public abstract class Menu {
 
     public abstract void userMenuSelection(String input);
 
-
     public void display() {
         String userInput;
 
-
-
         do {
             userInput = this.getInput().toUpperCase();
-            userMenuSelection(userInput);
+            userMenuSelection(convertEnumsToNums(userInput));
         }while (!"quit".equalsIgnoreCase(userInput));
     }
 
-
+    public String convertEnumsToNums(String menuNum) {
+        int stringToNum = Integer.parseInt(menuNum)-1;
+        return ""+this.menuEnum[stringToNum];
+    }
 
     public String getInput() {
-        for (Enum e: menuEnum) {
-            Console.print(e.name());
-        }
+        this.menuTitle();
+        Console.print(this.toString());
+//        for (Enum e: menuEnum) {
+//            Console.print(e.name());
+//        }
         return Console.getString("");
     }
+
+    public abstract void menuTitle();
+
+    public abstract String toString();
+
+
 }
 

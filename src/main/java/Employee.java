@@ -7,23 +7,13 @@ public class Employee extends Person {
     private Enum department;
     private double Salary;
     private boolean isSalary;
-    private ArrayList<TimeCard> timeCardList = new ArrayList<TimeCard>();
+    private ArrayList <TimeCard> timeCardList = new ArrayList <TimeCard>();
     //    private ArrayList<Incident> incidents;
     private BenefitPackage benefitPackage;
 
-    Employee(int id, String firstName, String lastName) {
-        super(id, firstName, lastName);
+    Employee(String firstName, String lastName, String phoneNumber, String address) {
+        super(firstName, lastName, phoneNumber, address);
     }
-
-    Employee(int id,String firstName,String lastName, String phoneNumber){
-        super(id,firstName,lastName,phoneNumber);
-    }
-
-    Employee(int id, String firstName,String lastName, String phoneNumber, String address){
-        super(id,firstName,lastName,phoneNumber,address);
-    }
-
-
 
 
     public String getPosition() {
@@ -58,7 +48,7 @@ public class Employee extends Person {
         isSalary = salary;
     }
 
-    public ArrayList<TimeCard> getTimeCardList() {
+    public ArrayList <TimeCard> getTimeCardList() {
         return timeCardList;
     }
 
@@ -74,21 +64,21 @@ public class Employee extends Person {
         this.benefitPackage = benefitPackage;
     }
 
-//    public ArrayList<Incident> getIncidents() {
+    //    public ArrayList<Incident> getIncidents() {
 //        return incidents;
 //    }
 //
 //    public void addIncident(Incident incident) {
 //        this.incidents.add(incident);
 //    }
-    public void clockIn(){
+    public void clockIn() {
         Date now = new Date();
         TimeCard timeCard = new TimeCard(now);
         addTimeCard(timeCard);
     }
 
-    public void clockOut(){
-        if (timeCardList.size()>0) {
+    public void clockOut() {
+        if (timeCardList.size() > 0) {
             int last = timeCardList.size() - 1;
             TimeCard lastCard = timeCardList.get(last);
             if (lastCard.getClockOut() == null) {
@@ -98,7 +88,21 @@ public class Employee extends Person {
         }
     }
 
-    public double getHourlyWage(){
-        return this.Salary/40;
+    public double getHourlyWage() {
+        return this.Salary / 40;
+    }
+
+    @Override
+    public String toString() {
+        String output =
+                "\nEmployee ID: " + super.getId() +
+                "\nName: " + super.getFirstName() + " " + super.getLastName() +
+                "\nPhone Number: " + super.getPhoneNumber() +
+                "\nAddress: " + super.getAddress() +
+                "\nDepartment: " + this.getDepartment() +
+                "\nPosition: " + this.getPosition() +
+                "\nSalary: " + this.getSalary() +
+                "\nBenefit Package: " + this.getBenefitPackage() + "\n";
+        return output;
     }
 }

@@ -7,8 +7,8 @@ import static org.junit.Assert.*;
 
 public class IncidentTest {
 
-    Employee testEmployeeOne = new Employee(1, "John", "Jones");
-    Employee testEmployeeTwo = new Employee(2, "Ricky", "Smith");
+    Employee testEmployeeOne = new Employee("John", "Jones", "123", "Home");
+    Employee testEmployeeTwo = new Employee("Ricky", "Smith", "123", "Home");
 
     ArrayList <Employee> testArrayList = new ArrayList <>();
     ArrayList <Employee> testArrayListTwo = new ArrayList <>();
@@ -91,6 +91,22 @@ public class IncidentTest {
 
         Assert.assertEquals(expected, actual);
 
+    }
+
+    @Test
+    public void toStringTest(){
+        String expected = "Incident Number: 2\n" +
+                "Employees involved :\n" +
+                "\tName: John Jones ID: 1\n" +
+                "\tName: Ricky Smith ID: 2\n" +
+                "Description: asdf\n" +
+                "Date: asdfasdf";
+        testArrayList.add(testEmployeeOne);
+        testArrayList.add(testEmployeeTwo);
+
+        String actual = testIncident.toString();
+
+        Assert.assertEquals(expected,actual);
     }
 
 

@@ -5,8 +5,8 @@ import java.util.Date;
 
 public class EmployeeTest {
 
-    Employee employee1 = new Employee(123,"billy","lastName");
-    Employee employee2 = new Employee(321,"bob","lastName");
+    Employee employee1 = new Employee("billy","lastName", "123", "Home");
+    Employee employee2 = new Employee("bob","lastName", "123", "Home");
 
     @Test       // Set and get test
     public void positionTest(){
