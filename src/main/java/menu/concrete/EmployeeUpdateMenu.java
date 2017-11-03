@@ -144,21 +144,32 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     public void updateDepartment() {
-        Console.print("Employee's current department: " + selectedEmployee.getDepartment());
-        String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
-        
-        switch (Department.valueOf(input.toUpperCase())) {
-            case MANAGEMENT:
-                this.selectedEmployee.setDepartment(Department.MANAGEMENT);
-                break;
-            case FINANCE:
-                this.selectedEmployee.setDepartment(Department.FINANCE);
-                break;
-            case LOGISTICS:
-                this.selectedEmployee.setDepartment(Department.LOGISTICS);
-                break;
-        }
+        do {
+            Console.print("Employee's current department: " + selectedEmployee.getDepartment());
+            String input = Console.getString("Enter new department (Management, Finance, Logistics): ");
+
+            try {
+                switch (Department.valueOf(input.toUpperCase())) {
+                    case MANAGEMENT:
+                        this.selectedEmployee.setDepartment(Department.MANAGEMENT);
+                        break;
+                    case FINANCE:
+                        this.selectedEmployee.setDepartment(Department.FINANCE);
+                        break;
+                    case LOGISTICS:
+                        this.selectedEmployee.setDepartment(Department.LOGISTICS);
+                        break;
+                    default:
+                        continue;
+                }
+            } catch (IllegalArgumentException e) {
+                Console.print("INVALID INPUT ( ° ͜ʖ͡°)╭∩╮");
+                continue;
+            }
+
+        } while (true);
     }
+
 
     private void updatePosition() {
         Console.print("Employee's current position: " + selectedEmployee.getDepartment());
