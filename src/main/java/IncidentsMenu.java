@@ -76,5 +76,15 @@ public class IncidentsMenu extends Menu{
         IncidentActionMenu.INSTANCE.setIncident(aIncident);
         IncidentActionMenu.INSTANCE.display();
     }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) Create\n" +
+                "2) Find\n" +
+                "3) Back\n" +
+                "4) Quit\n";
+        return output;
+    }
 }
 

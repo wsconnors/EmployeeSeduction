@@ -2,7 +2,7 @@ public class EmployeeUpdateMenu extends Menu {
     public static final EmployeeUpdateMenu INSTANCE = new EmployeeUpdateMenu();
 
     enum employeeUpdateEnums {FIRST_NAME, LAST_NAME, ADDRESS, PHONE_NUMBER, SALARY,
-        SALARY_OR_HOURLY, BENEFITS, DEPARTMENT, POSITION, BACK};
+        SALARY_OR_HOURLY, BENEFITS, DEPARTMENT, POSITION, BACK, QUIT};
 
     private Employee selectedEmployee;
 
@@ -67,6 +67,10 @@ public class EmployeeUpdateMenu extends Menu {
             case BACK:
                 Console.goBack(EmployeeActionMenu.INSTANCE);
                 break;
+            case QUIT:
+                Console.quitHRApp();
+                break;
+
         }
 
     }
@@ -142,5 +146,21 @@ public class EmployeeUpdateMenu extends Menu {
 
     private void updatePosition(){
         this.selectedEmployee.setPosition(Console.getString("Enter a new position: "));
+    }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) First Name\n" +
+                "2) Last Name\n" +
+                "3) Address\n" +
+                "4) Phone Number\n" +
+                "5) Salary\n" +
+                "6) Salary or Hourly\n" +
+                "7) Benefits\n" +
+                "8) Department\n" +
+                "9) Position\n" +
+                "10) Back";
+        return output;
     }
 }

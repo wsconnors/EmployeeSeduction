@@ -12,20 +12,27 @@ public abstract class Menu {
 
         do {
             userInput = this.getInput().toUpperCase();
-            userMenuSelection(userInput);
+            userMenuSelection(convertEnumsToNums(userInput));
         }while (!"quit".equalsIgnoreCase(userInput));
     }
 
+    public String convertEnumsToNums(String menuNum) {
+        int stringToNum = Integer.parseInt(menuNum)-1;
+        return ""+this.menuEnum[stringToNum];
+    }
+
     public String getInput() {
-        //Console.print(this.toString());
         this.menuTitle();
-        for (Enum e: menuEnum) {
-            Console.print(e.name());
-        }
+        Console.print(this.toString());
+//        for (Enum e: menuEnum) {
+//            Console.print(e.name());
+//        }
         return Console.getString("");
     }
 
     public abstract void menuTitle();
+
+    public abstract String toString();
 
 
 }

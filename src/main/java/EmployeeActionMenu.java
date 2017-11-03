@@ -18,7 +18,17 @@ public class EmployeeActionMenu extends Menu {
 
     @Override
     public void menuTitle() {
-
+        Console.print(
+                "  ______                 _                                      _   _             \n" +
+                " |  ____|               | |                           /\\       | | (_)            \n" +
+                " | |__   _ __ ___  _ __ | | ___  _   _  ___  ___     /  \\   ___| |_ _  ___  _ __  \n" +
+                " |  __| | '_ ` _ \\| '_ \\| |/ _ \\| | | |/ _ \\/ _ \\   / /\\ \\ / __| __| |/ _ \\| '_ \\ \n" +
+                " | |____| | | | | | |_) | | (_) | |_| |  __/  __/  / ____ \\ (__| |_| | (_) | | | |\n" +
+                " |______|_| |_| |_| .__/|_|\\___/ \\__, |\\___|\\___| /_/    \\_\\___|\\__|_|\\___/|_| |_|\n" +
+                "                  | |             __/ |                                           \n" +
+                "                  |_|            |___/                                            ");
+        Console.print(
+                "===============================================================================================");
     }
 
     @Override
@@ -52,5 +62,16 @@ public class EmployeeActionMenu extends Menu {
         Console.print("\n"+this.selectedEmployee.toString());
         Console.print("Employee has been deleted.\n( ° ͜ʖ͡°)╭∩╮\n");
         EmployeeDirectoryMenu.INSTANCE.display();
+    }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) Update\n" +
+                "2) Print Employee Information\n" +
+                "3) Delete\n" +
+                "4) Back";
+
+        return output;
     }
 }

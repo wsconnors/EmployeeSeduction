@@ -95,4 +95,17 @@ public class IncidentUpdateMenu extends Menu{
         this.incident.setDate(Console.getString("Enter new date: "));
         Console.goBack(IncidentsMenu.INSTANCE);
     }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) Add Employee Involved\n" +
+                "2) Remove Employee Involved\n" +
+                "3) Edit Description\n" +
+                "4) Edit Date\n" +
+                "5) Edit Id\n" +
+                "6) Back\n" +
+                "7) Quit\n";
+        return output;
+    }
 }

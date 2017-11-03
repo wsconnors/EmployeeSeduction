@@ -80,5 +80,15 @@ public class EmployeeSelectionMenu extends Menu{
         }
         return aEmployee;
     }
+
+    @Override
+    public String toString() {
+        String output =
+                "1) Find By Id\n" +
+                "2) Find By Last Name\n" +
+                "3) Back\n" +
+                "4) Quit\n";
+        return output;
+    }
 }
 
