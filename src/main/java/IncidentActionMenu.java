@@ -57,7 +57,7 @@ public class IncidentActionMenu extends Menu{
         IncidentUpdateMenu.INSTANCE.setIncident(this.incident);
     }
     public void printIncident() {
-        System.out.println(this.incident.toString());
+        Console.print(this.incident.toString());
     }
 
     @Override
