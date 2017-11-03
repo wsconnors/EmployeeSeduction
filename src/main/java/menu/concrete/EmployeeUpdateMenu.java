@@ -125,7 +125,7 @@ public class EmployeeUpdateMenu extends Menu {
     }
 
     public void updateBenefits() {
-        Console.print("Employee's current benefits package: " + selectedEmployee.getBenefitPackage().printName());
+        Console.print("Employee's current benefits package: " + selectedEmployee.getBenefitPackage().getName());
         String input = Console.getString("Enter new benefits package(SILVER/GOLD/PLATINUM): ");
 
         if ("silver".equalsIgnoreCase(input)) {

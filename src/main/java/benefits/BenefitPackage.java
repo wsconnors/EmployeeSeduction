@@ -45,12 +45,7 @@ public abstract class BenefitPackage {
         String hasRetirementPlan = "Has Retirement Plan: " + retirementPlan;
         return hasRetirementPlan;
     }
-
-    public String printName(){
-        return name;
-    }
 }
-
 
 
 
