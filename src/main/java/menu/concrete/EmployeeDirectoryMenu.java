@@ -66,10 +66,14 @@ public class EmployeeDirectoryMenu extends Menu {
 
     private void printEmployeesByDepartment(){
         String output = "";
-        String input = Console.getString("What department?");
+        String input = Console.getString("What department? (Management, Finance, Logistics)");
         for(Employee employee : EmployeeWareHouse.getEmployeeList()){
-            if(input.equalsIgnoreCase((String)employee.getDepartment()))
+            if(input.equalsIgnoreCase((""
+                    +employee.getDepartment()))){
+                output+= "Name : " + employee.getFirstName() +" "+ employee.getLastName()+" ID: " + employee.getId()+"\n";
+            }
         }
+        Console.print(output);
 
     }
 
@@ -157,6 +161,7 @@ public class EmployeeDirectoryMenu extends Menu {
         String enumStrings =
                 "1) Create Employee\n" +
                 "2) Find Employee\n" +
+                "3) Print Employees in Department\n"+
                 "3) Back\n" +
                 "4) Quit";
         return enumStrings;
